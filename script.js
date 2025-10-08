@@ -9,29 +9,54 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 handleScroll();
 
-// Slider tự động + nút điều hướng
+// Slider
+const track = document.querySelector('.slide-track');
 const slides = document.querySelectorAll('.slide');
-let index = 0;
-const btnLeft = document.getElementById('btnLeft');
-const btnRight = document.getElementById('btnRight');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+const dotsContainer = document.querySelector('.slick-dots');
 
-function showSlide(i) {
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[i].classList.add('active');
+let index = 0;
+const visibleCount = 4;
+
+// tạo dots
+for (let i = 0; i < Math.ceil(slides.length / visibleCount); i++) {
+  const btn = document.createElement('button');
+  if (i === 0) btn.classList.add('active');
+  dotsContainer.appendChild(btn);
 }
 
-btnRight.addEventListener('click', () => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
+const dots = dotsContainer.querySelectorAll('button');
+
+function updateSlider() {
+  const offset = index * (slides[0].offsetWidth + 15);
+  track.style.transform = `translateX(-${offset}px)`;
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[Math.floor(index / visibleCount)].classList.add('active');
+}
+
+next.addEventListener('click', () => {
+  index++;
+  if (index > slides.length - visibleCount) index = 0; // vòng tròn
+  updateSlider();
 });
 
-btnLeft.addEventListener('click', () => {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
+prev.addEventListener('click', () => {
+  index--;
+  if (index < 0) index = slides.length - visibleCount;
+  updateSlider();
 });
 
-// Tự động chuyển ảnh
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    index = i * visibleCount;
+    updateSlider();
+  });
+});
+
+// Auto play
 setInterval(() => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-}, 5000);
+  index++;
+  if (index > slides.length - visibleCount) index = 0;
+  updateSlider();
+}, 4000);
