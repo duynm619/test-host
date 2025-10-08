@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Trang Web Du Lịch</title>
-        <!-- Liên kết Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <!-- Header (Navbar) -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <div class="container">
-                <!-- Hamburger Icon (Bên trái) -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vietnam Travel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-left">
+        <li><a href="#home">Trang chủ</a></li>
+        <li><a href="#regions">Khám phá</a></li>
+      </ul>
+      <div class="logo">🌊 VietTravel</div>
+      <ul class="nav-right">
+        <li><a href="#resorts">Resort</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
 
-                <!-- Logo (Căn giữa) -->
-                <a class="navbar-brand mx-auto text-white" href="#">Du Lịch Việt Nam</a>
+  <!-- Hero / Bento Box -->
+  <section id="home" class="hero">
+    <h1>Explore the Vietnam</h1>
+    <p>Khám phá vẻ đẹp từ Bắc chí Nam</p>
+    <div class="bento-box">
+      <div class="bento small" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');"></div>
+      <div class="bento large" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');"></div>
+      <div class="bento small" style="background-image:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff');"></div>
+    </div>
+  </section>
 
-                <!-- Menu -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#home">Trang Chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#about">Giới Thiệu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#destinations">Điểm Đến</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#contact">Liên Hệ</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+  <!-- Regions -->
+  <section id="regions" class="regions">
+    <h2>Khám phá các vùng miền</h2>
+    <div class="region-container">
+      <div class="region" data-animate>
+        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90" alt="Miền Bắc">
+        <h3>Miền Bắc</h3>
+        <p>Vẻ đẹp hùng vĩ của núi rừng và vịnh Hạ Long.</p>
+        <a href="#" class="btn">Go to Miền Bắc</a>
+      </div>
+      <div class="region" data-animate>
+        <img src="https://images.unsplash.com/photo-1549887534-3db1bd59dcca" alt="Miền Trung">
+        <h3>Miền Trung</h3>
+        <p>Thiên đường biển và di sản văn hoá.</p>
+        <a href="#" class="btn">Go to Miền Trung</a>
+      </div>
+      <div class="region" data-animate>
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Miền Nam">
+        <h3>Miền Nam</h3>
+        <p>Sôi động, hiện đại và đậm chất miền sông nước.</p>
+        <a href="#" class="btn">Go to Miền Nam</a>
+      </div>
+    </div>
+  </section>
 
-        <!-- About Section -->
-        <section id="about" class="container py-5">
-            <h2>Giới Thiệu</h2>
-            <p>Chúng tôi cung cấp các tour du lịch khám phá những điểm đến nổi tiếng ở Việt Nam. Với đội ngũ hướng dẫn viên chuyên nghiệp và dịch vụ tận tâm, bạn sẽ có những trải nghiệm tuyệt vời nhất.</p>
-        </section>
+  <!-- Resorts -->
+  <section id="resorts" class="resorts">
+    <h2>Các Resort Nổi Bật</h2>
+    <div class="resort-container">
+      <div class="resort" data-animate>
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Resort">
+        <h3>Phú Quốc Pearl Resort</h3>
+      </div>
+      <div class="resort" data-animate>
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Resort">
+        <h3>Đà Nẵng Ocean View</h3>
+      </div>
+      <div class="resort" data-animate>
+        <img src="https://images.unsplash.com/photo-1590490359854-dfba19688c5d" alt="Resort">
+        <h3>Đà Lạt Dream Hill</h3>
+      </div>
+    </div>
+  </section>
 
-        <!-- Destinations Section -->
-        <section id="destinations" class="container py-5">
-            <h2>Điểm Đến</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Hạ Long" />
-                        <div class="card-body">
-                            <h5 class="card-title">Vịnh Hạ Long</h5>
-                            <p class="card-text">Khám phá vẻ đẹp tuyệt vời của Vịnh Hạ Long, với các hòn đảo kỳ bí và phong cảnh ngoạn mục.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Hội An" />
-                        <div class="card-body">
-                            <h5 class="card-title">Phố Cổ Hội An</h5>
-                            <p class="card-text">Phố cổ Hội An nổi bật với những con đường rợp bóng cây và các ngôi nhà cổ kính, là điểm đến lý tưởng cho những ai yêu thích lịch sử và văn hóa.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Sapa" />
-                        <div class="card-body">
-                            <h5 class="card-title">Sapa</h5>
-                            <p class="card-text">Khám phá những cánh đồng bậc thang tuyệt đẹp của Sapa và tìm hiểu về văn hóa của các dân tộc thiểu số tại đây.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Adventure / Voucher -->
+  <section id="voucher" class="voucher">
+    <h2>Mạo hiểm & Ưu đãi</h2>
+    <div class="voucher-box" data-animate>
+      <div>
+        <h3>Trải nghiệm mạo hiểm</h3>
+        <p>Khám phá hang động, leo núi, lặn biển cùng hướng dẫn viên chuyên nghiệp.</p>
+      </div>
+      <div>
+        <h3>Voucher giảm giá</h3>
+        <p>Nhận ưu đãi lên đến 30% cho chuyến đi kế tiếp của bạn.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="container py-5">
-            <h2>Liên Hệ</h2>
-            <p>Để biết thêm thông tin về các tour du lịch, vui lòng liên hệ với chúng tôi qua email hoặc điện thoại dưới đây:</p>
-            <p>Email: dulich@vietnam.com</p>
-            <p>Điện thoại: 098-765-4321</p>
-        </section>
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Liên hệ: contact@viettravel.vn | © 2025 VietTravel</p>
+  </footer>
 
-        <!-- Footer -->
-        <footer class="bg-dark text-white text-center py-3">
-            <p>&copy; 2025 Du Lịch Việt Nam. Tất cả quyền lợi được bảo lưu.</p>
-        </footer>
-
-        <!-- Liên kết đến Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+  <script src="script.js"></script>
+</body>
 </html>
