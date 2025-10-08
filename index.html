@@ -1,10 +1,140 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vietnam Travel</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vietnam Travel — Slider Infinite Centered</title>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html,body { height:100%; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background:#f8fafc;
+      color:#033e6b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header (giữ nguyên) */
+    header {
+      position:fixed; top:0; left:0; width:100%;
+      background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.08);
+      z-index:50;
+    }
+    nav {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 48px;
+    }
+    .logo { font-weight:700; color:#0077b6; font-size:1.2rem; }
+    .nav-left, .nav-right { display:flex; gap:18px; list-style:none; }
+    nav a { color:#033e6b; text-decoration:none; font-weight:500; }
+
+    main { padding-top:80px; } /* để khỏi che header */
+
+    /* Hero + Slider */
+    .hero {
+      text-align:center;
+      padding:36px 0 60px;
+      background: linear-gradient(to bottom, #caf0f8 0%, #fff 100%);
+    }
+    .hero h1 { font-size:2.4rem; color:#03045e; margin-bottom:8px; }
+    .hero p { color:#0077b6; margin-bottom:22px; }
+
+    .slider-container {
+      width:92%;
+      max-width:1150px;
+      margin:0 auto;
+      position:relative;
+      user-select:none;
+    }
+
+    /* viewport (nơi user kéo) */
+    .slider-viewport {
+      overflow:hidden;
+      width:100%;
+      /* center viewport */
+      display:block;
+    }
+
+    /* track (flex row) */
+    .slide-track {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      transition: transform 600ms cubic-bezier(.22,.9,.35,1);
+      will-change: transform;
+      padding:18px 0; /* khoảng trên dưới */
+    }
+
+    .slide {
+      flex: 0 0 300px; /* width mỗi ảnh (có thể thay / responsive) */
+      border-radius:14px;
+      overflow:hidden;
+      background:#eee;
+      box-shadow:0 6px 20px rgba(2,46,72,0.06);
+      transform-origin:center center;
+      transition: transform 300ms ease;
+    }
+
+    .slide img {
+      display:block;
+      width:100%;
+      height:190px;
+      object-fit:cover;
+    }
+
+    /* active center visual (khi slide là center) */
+    .slide.is-center { transform: scale(1.06); box-shadow: 0 18px 40px rgba(2,46,72,0.12); }
+
+    /* Buttons */
+    .btn-prev, .btn-next {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:44px; height:44px; border-radius:50%;
+      border:none; background:rgba(0,119,182,0.85); color:#fff;
+      font-size:22px; cursor:pointer; z-index:20;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s;
+    }
+    .btn-prev:hover, .btn-next:hover { background:rgba(0,119,182,1); }
+    .btn-prev { left:6px; }
+    .btn-next { right:6px; }
+
+    /* caption + dots container */
+    .caption { margin-top:14px; font-weight:600; color:#023e8a; min-height:28px; opacity:1; transition:opacity .35s ease; }
+    .dots-wrap { margin-top:10px; display:flex; justify-content:center; gap:8px; }
+
+    .dot {
+      width:10px; height:10px; border-radius:50%; background:#d1d5db; border:none; cursor:pointer;
+      transition:transform .18s, background .18s;
+    }
+    .dot.active { background:#0077b6; transform:scale(1.25); }
+
+    /* rest of page (keeps original layout look) */
+    .regions, .resorts, .voucher { padding:80px 16px; max-width:1100px; margin:0 auto; text-align:center; }
+    .region-container, .resort-container, .voucher-box { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
+    .region, .resort, .voucher-box > div { background:#fff; border-radius:16px; padding-bottom:18px; width:300px; box-shadow:0 6px 18px rgba(2,46,72,0.06); }
+    .region img, .resort img { width:100%; height:180px; object-fit:cover; border-radius:16px 16px 0 0; }
+    .btn { display:inline-block; margin-top:10px; padding:10px 18px; background:#0077b6; color:#fff; border-radius:10px; text-decoration:none; }
+    footer { margin-top:40px; padding:18px; background:#023e8a; color:#fff; text-align:center; }
+
+    /* responsive adjustments */
+    @media (max-width:1100px) {
+      .slide { flex:0 0 260px; }
+      .slide img { height:170px; }
+    }
+    @media (max-width:820px) {
+      .slide { flex:0 0 220px; }
+      .slide img { height:150px; }
+      .btn-prev, .btn-next { width:38px; height:38px; font-size:18px; }
+    }
+    @media (max-width:560px) {
+      .slide { flex:0 0 80%; } /* show one big slide on small screens */
+      .slider-container { width:96%; }
+      .btn-prev, .btn-next { display:none; } /* hide buttons on small */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,93 +151,386 @@
     </nav>
   </header>
 
-  <!-- Hero Slider -->
-  <section id="home" class="hero">
-    <h1>Explore the Vietnam</h1>
-    <p>Khám phá vẻ đẹp từ Bắc chí Nam</p>
-    <div class="slider-container">
-      <button class="slide-btn prev">&#10094;</button>
-      <div class="slider">
-        <div class="slide-track">
-          <div class="slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1533106418989-88406c7cc8bb" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt=""></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1559599238-5c4e7d4e4293" alt=""></div>
+  <main>
+    <!-- Hero / Slider -->
+    <section id="home" class="hero">
+      <h1>Explore the Vietnam</h1>
+      <p>Khám phá vẻ đẹp từ Bắc chí Nam</p>
+
+      <div class="slider-container" id="carousel">
+        <button class="btn-prev" aria-label="Prev">&lsaquo;</button>
+
+        <div class="slider-viewport" id="viewport">
+          <div class="slide-track" id="track">
+            <!-- INITIAL SLIDES (original list) -->
+            <div class="slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop&s=1"><!-- caption data handled in JS --></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop&s=2"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1400&auto=format&fit=crop&s=3"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1400&auto=format&fit=crop&s=4"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1400&auto=format&fit=crop&s=5"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1533106418989-88406c7cc8bb?q=80&w=1400&auto=format&fit=crop&s=6"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1400&auto=format&fit=crop&s=7"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1559599238-5c4e7d4e4293?q=80&w=1400&auto=format&fit=crop&s=8"></div>
+          </div>
         </div>
-      </div>
-      <button class="slide-btn next">&#10095;</button>
-      <div class="slick-dots"></div>
-    </div>
-  </section>
 
-  <!-- Regions -->
-  <section id="regions" class="regions">
-    <h2>Khám phá các vùng miền</h2>
-    <div class="region-container">
-      <div class="region" data-animate>
-        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90" alt="Miền Bắc">
-        <h3>Miền Bắc</h3>
-        <p>Vẻ đẹp hùng vĩ của núi rừng và vịnh Hạ Long.</p>
-        <a href="#" class="btn">Go to Miền Bắc</a>
-      </div>
-      <div class="region" data-animate>
-        <img src="https://images.unsplash.com/photo-1549887534-3db1bd59dcca" alt="Miền Trung">
-        <h3>Miền Trung</h3>
-        <p>Thiên đường biển và di sản văn hoá.</p>
-        <a href="#" class="btn">Go to Miền Trung</a>
-      </div>
-      <div class="region" data-animate>
-        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt="Miền Nam">
-        <h3>Miền Nam</h3>
-        <p>Sôi động, hiện đại và đậm chất miền sông nước.</p>
-        <a href="#" class="btn">Go to Miền Nam</a>
-      </div>
-    </div>
-  </section>
+        <button class="btn-next" aria-label="Next">&rsaquo;</button>
 
-  <!-- Resorts -->
-  <section id="resorts" class="resorts">
-    <h2>Các Resort Nổi Bật</h2>
-    <div class="resort-container">
-      <div class="resort" data-animate>
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Resort">
-        <h3>Phú Quốc Pearl Resort</h3>
+        <div class="caption" id="caption">Vịnh Hạ Long – Kỳ quan thiên nhiên thế giới</div>
+        <div class="dots-wrap" id="dotsWrap"></div>
       </div>
-      <div class="resort" data-animate>
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Resort">
-        <h3>Đà Nẵng Ocean View</h3>
-      </div>
-      <div class="resort" data-animate>
-        <img src="https://images.unsplash.com/photo-1590490359854-dfba19688c5d" alt="Resort">
-        <h3>Đà Lạt Dream Hill</h3>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Voucher -->
-  <section id="voucher" class="voucher">
-    <h2>Mạo hiểm & Ưu đãi</h2>
-    <div class="voucher-box" data-animate>
-      <div>
-        <h3>Trải nghiệm mạo hiểm</h3>
-        <p>Khám phá hang động, leo núi, lặn biển cùng hướng dẫn viên chuyên nghiệp.</p>
+    <!-- Regions (same as original) -->
+    <section id="regions" class="regions">
+      <h2>Khám phá các vùng miền</h2>
+      <div class="region-container">
+        <div class="region" data-animate><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90" alt=""><h3>Miền Bắc</h3><p>Vẻ đẹp hùng vĩ của núi rừng và vịnh Hạ Long.</p><a class="btn" href="#">Go to Miền Bắc</a></div>
+        <div class="region" data-animate><img src="https://images.unsplash.com/photo-1549887534-3db1bd59dcca" alt=""><h3>Miền Trung</h3><p>Thiên đường biển và di sản văn hoá.</p><a class="btn" href="#">Go to Miền Trung</a></div>
+        <div class="region" data-animate><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" alt=""><h3>Miền Nam</h3><p>Sôi động, hiện đại và đậm chất miền sông nước.</p><a class="btn" href="#">Go to Miền Nam</a></div>
       </div>
-      <div>
-        <h3>Voucher giảm giá</h3>
-        <p>Nhận ưu đãi lên đến 30% cho chuyến đi kế tiếp của bạn.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <!-- Resorts -->
+    <section id="resorts" class="resorts">
+      <h2>Các Resort Nổi Bật</h2>
+      <div class="resort-container">
+        <div class="resort" data-animate><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt=""><h3>Phú Quốc Pearl Resort</h3></div>
+        <div class="resort" data-animate><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt=""><h3>Đà Nẵng Ocean View</h3></div>
+        <div class="resort" data-animate><img src="https://images.unsplash.com/photo-1590490359854-dfba19688c5d" alt=""><h3>Đà Lạt Dream Hill</h3></div>
+      </div>
+    </section>
+
+    <!-- Voucher -->
+    <section id="voucher" class="voucher">
+      <h2>Mạo hiểm & Ưu đãi</h2>
+      <div class="voucher-box" data-animate>
+        <div><h3>Trải nghiệm mạo hiểm</h3><p>Khám phá hang động, leo núi, lặn biển cùng hướng dẫn viên chuyên nghiệp.</p></div>
+        <div><h3>Voucher giảm giá</h3><p>Nhận ưu đãi lên đến 30% cho chuyến đi kế tiếp của bạn.</p></div>
+      </div>
+    </section>
+
+  </main>
+
   <footer id="contact">
     <p>Liên hệ: contact@viettravel.vn | © 2025 VietTravel</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    /***** Carousel Infinite Centered + Dots + Single Caption + Dragging + Autoplay *****/
+
+    (function () {
+      const track = document.getElementById('track');
+      const viewport = document.getElementById('viewport');
+      const prevBtn = document.querySelector('.btn-prev');
+      const nextBtn = document.querySelector('.btn-next');
+      const dotsWrap = document.getElementById('dotsWrap');
+      const captionEl = document.getElementById('caption');
+      let originalSlides = Array.from(track.children); // initial slides
+      const captions = [
+        "Vịnh Hạ Long – Kỳ quan thiên nhiên thế giới",
+        "Đà Nẵng – Thành phố của những cây cầu",
+        "Huế – Cố đô thơ mộng",
+        "Hà Giang – Nơi cực Bắc Tổ quốc",
+        "Hội An – Phố cổ lung linh đèn lồng",
+        "Ninh Bình – Vịnh Hạ Long trên cạn",
+        "Phú Quốc – Đảo ngọc thiên đường",
+        "Sa Pa – Thành phố trong mây"
+      ];
+
+      let N = originalSlides.length;
+
+      // clone all slides both ends to allow seamless infinite loop
+      function createClones() {
+        const clonesBefore = [];
+        const clonesAfter = [];
+        for (let i = 0; i < N; i++) {
+          clonesAfter.push(originalSlides[i].cloneNode(true));
+        }
+        for (let i = N - 1; i >= 0; i--) {
+          clonesBefore.push(originalSlides[i].cloneNode(true));
+        }
+        // prepend clonesBefore
+        clonesBefore.forEach(node => track.insertBefore(node, track.firstChild));
+        // append clonesAfter
+        clonesAfter.forEach(node => track.appendChild(node));
+      }
+
+      createClones();
+
+      let allSlides = Array.from(track.children);
+      const clonesBeforeCount = N;
+      const totalSlides = allSlides.length;
+
+      // state
+      let index = clonesBeforeCount; // start at first original
+      let animDuration = 600; // ms (match CSS)
+      let isTransitioning = false;
+
+      // geometry
+      let gap = parseFloat(getComputedStyle(track).gap) || 16;
+      let slideWidth = 0;
+      let step = 0;
+      let baseOffset = 0; // value to center a slide
+
+      function calcLayout() {
+        // recalc DOM references
+        allSlides = Array.from(track.children);
+        slideWidth = allSlides[0].getBoundingClientRect().width;
+        step = slideWidth + gap;
+        const viewportWidth = viewport.clientWidth;
+        baseOffset = (viewportWidth / 2) - (slideWidth / 2);
+      }
+
+      function setTransition(enabled) {
+        if (enabled) {
+          track.style.transition = `transform ${animDuration}ms cubic-bezier(.22,.9,.35,1)`;
+        } else {
+          track.style.transition = 'none';
+        }
+      }
+
+      function getTranslateForIndex(i) {
+        // translateX in px
+        return -(i * step - baseOffset);
+      }
+
+      // initial layout after images loaded
+      function initPosition() {
+        calcLayout();
+        // place at index
+        setTransition(false);
+        const t = getTranslateForIndex(index);
+        track.style.transform = `translateX(${t}px)`;
+        // ensure center classes and dots
+        requestAnimationFrame(() => {
+          updateCenterClass();
+          updateCaptionAndDots();
+        });
+      }
+
+      // build dots (one dot per original slide)
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < N; i++) {
+          const b = document.createElement('button');
+          b.className = 'dot';
+          b.dataset.idx = i;
+          b.addEventListener('click', () => {
+            goToOriginal(i);
+          });
+          dotsWrap.appendChild(b);
+        }
+      }
+
+      // compute current original index (0..N-1) corresponding to center
+      function currentOriginalIndex() {
+        return ((index - clonesBeforeCount) % N + N) % N;
+      }
+
+      function updateCaptionAndDots() {
+        const orig = currentOriginalIndex();
+        captionEl.style.opacity = 0;
+        setTimeout(() => {
+          captionEl.textContent = captions[orig] || '';
+          captionEl.style.opacity = 1;
+        }, 120);
+
+        // update dots
+        const dots = Array.from(dotsWrap.children);
+        dots.forEach((d, i) => d.classList.toggle('active', i === orig));
+      }
+
+      function updateCenterClass() {
+        // remove previous center classes, set is-center to the slide that is centered
+        allSlides.forEach(s => s.classList.remove('is-center'));
+        // center index is index
+        const centerNode = allSlides[index];
+        if (centerNode) centerNode.classList.add('is-center');
+      }
+
+      // move to index with animation
+      function moveToIndex(i, withTransition = true) {
+        if (isTransitioning) return;
+        isTransitioning = withTransition;
+        if (withTransition) setTransition(true);
+        else setTransition(false);
+
+        index = i;
+        const t = getTranslateForIndex(index);
+        track.style.transform = `translateX(${t}px)`;
+        // update center visual after animation
+        if (withTransition) {
+          // will be cleared in transitionend handler
+        } else {
+          updateCenterClass();
+          updateCaptionAndDots();
+          isTransitioning = false;
+        }
+      }
+
+      // go to original slide j (0..N-1): set index to clonesBefore + j
+      function goToOriginal(j) {
+        moveToIndex(clonesBeforeCount + j, true);
+      }
+
+      // next / prev
+      function next() {
+        if (isTransitioning) return;
+        moveToIndex(index + 1, true);
+      }
+      function prev() {
+        if (isTransitioning) return;
+        moveToIndex(index - 1, true);
+      }
+
+      // handle wrap after transition end
+      track.addEventListener('transitionend', () => {
+        // when transition finishes, check if we are inside clones and reset to corresponding original index silently
+        if (index >= clonesBeforeCount + N) {
+          // moved past the last original into appended clones, wrap back
+          index = index - N;
+          setTransition(false);
+          const t = getTranslateForIndex(index);
+          track.style.transform = `translateX(${t}px)`;
+          // force reflow then re-enable transitions
+          void track.offsetWidth;
+        } else if (index < clonesBeforeCount) {
+          // moved into prepended clones, jump to corresponding original in middle
+          index = index + N;
+          setTransition(false);
+          const t = getTranslateForIndex(index);
+          track.style.transform = `translateX(${t}px)`;
+          void track.offsetWidth;
+        }
+        // update visuals
+        updateCenterClass();
+        updateCaptionAndDots();
+        // small delay to ensure we clear isTransitioning after reset
+        setTimeout(() => { isTransitioning = false; }, 20);
+      });
+
+      // autoplay timer
+      let autoplayInterval = 3800;
+      let autoplayTimer = null;
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(() => {
+          next();
+        }, autoplayInterval);
+      }
+      function stopAutoplay() {
+        if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+      }
+
+      // Drag / swipe support (pointer events)
+      let isDown = false;
+      let startX = 0;
+      let startTranslate = 0;
+      let currentTranslate = 0;
+
+      function onPointerDown(e) {
+        // ignore when already transitioning
+        isDown = true;
+        stopAutoplay();
+        setTransition(false);
+        startX = (e.touches ? e.touches[0].clientX : e.clientX);
+        currentTranslate = getTranslateForIndex(index);
+        startTranslate = currentTranslate;
+        // attach move / up
+        window.addEventListener('pointermove', onPointerMove, {passive:false});
+        window.addEventListener('pointerup', onPointerUp);
+        window.addEventListener('pointercancel', onPointerUp);
+        // also support touch
+        window.addEventListener('touchmove', onPointerMove, {passive:false});
+        window.addEventListener('touchend', onPointerUp);
+      }
+
+      function onPointerMove(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
+        const dx = clientX - startX;
+        currentTranslate = startTranslate + dx;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+      }
+
+      function onPointerUp(e) {
+        if (!isDown) return;
+        isDown = false;
+        // compute nearest index from currentTranslate
+        const translate = currentTranslate;
+        // i = round((baseOffset - translate)/step)
+        const raw = (baseOffset - translate) / step;
+        const nearest = Math.round(raw);
+        moveToIndex(nearest, true);
+        // cleanup listeners
+        window.removeEventListener('pointermove', onPointerMove);
+        window.removeEventListener('pointerup', onPointerUp);
+        window.removeEventListener('pointercancel', onPointerUp);
+        window.removeEventListener('touchmove', onPointerMove);
+        window.removeEventListener('touchend', onPointerUp);
+        // restart autoplay
+        startAutoplay();
+      }
+
+      // events
+      nextBtn.addEventListener('click', () => { next(); });
+      prevBtn.addEventListener('click', () => { prev(); });
+
+      // attach pointerdown to viewport
+      const vp = document.getElementById('viewport');
+      vp.addEventListener('pointerdown', onPointerDown);
+      vp.addEventListener('touchstart', onPointerDown, {passive:false});
+
+      // recalculation on resize
+      window.addEventListener('resize', () => {
+        // small debounce
+        setTimeout(() => {
+          calcLayout();
+          // reposition silently
+          setTransition(false);
+          track.style.transform = `translateX(${getTranslateForIndex(index)}px)`;
+        }, 60);
+      });
+
+      // init after images loaded (some images might still load)
+      function waitImagesThenInit() {
+        const imgs = Array.from(track.querySelectorAll('img'));
+        const promises = imgs.map(img => {
+          if (img.complete) return Promise.resolve();
+          return new Promise(res => img.onload = img.onerror = res);
+        });
+        return Promise.all(promises);
+      }
+
+      // init
+      waitImagesThenInit().then(() => {
+        calcLayout();
+        buildDots();
+        // set initial silent position at clonesBeforeCount (first original)
+        setTransition(false);
+        track.style.transform = `translateX(${getTranslateForIndex(index)}px)`;
+        updateCenterClass();
+        updateCaptionAndDots();
+        // small timeout to ensure transitions work later
+        setTimeout(() => { setTransition(true); }, 20);
+        startAutoplay();
+      });
+
+      // clicking dot should center that original slide
+      dotsWrap.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('dot')) return;
+        const clickedIndex = Array.from(dotsWrap.children).indexOf(e.target);
+        if (clickedIndex >= 0) {
+          goToOriginal(clickedIndex);
+        }
+      });
+
+      // expose for debugging (optional)
+      window._carousel = { goToOriginal, next, prev, getIndex: () => currentOriginalIndex() };
+
+    })();
+  </script>
 </body>
 </html>
