@@ -45,11 +45,19 @@ section h2{text-align:center;margin-bottom:20px;color:#03045e;font-size:2rem}
 .region img{width:100%;height:180px;object-fit:cover}
 .region h3{padding:12px;color:#03045e}
 
-/* --- RESORTS --- */
-.resorts .resort-list{display:flex;overflow-x:auto;gap:18px;padding:10px 0;scroll-snap-type:x mandatory}
-.resort{scroll-snap-align:center;flex:0 0 280px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.05);overflow:hidden}
-.resort img{width:100%;height:180px;object-fit:cover}
-.resort h4{padding:10px}
+/* --- RESORTS (new alternating layout) --- */
+.resorts{background:#f0faff}
+.resort-item{display:flex;align-items:center;gap:40px;margin-bottom:60px;max-width:1100px;margin-inline:auto}
+.resort-item:nth-child(even){flex-direction:row-reverse}
+.resort-item img{width:50%;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.1);object-fit:cover}
+.resort-info{width:50%}
+.resort-info h3{color:#03045e;font-size:1.6rem;margin-bottom:10px}
+.resort-info p{color:#0077b6;line-height:1.6}
+@media(max-width:850px){
+  .resort-item{flex-direction:column!important}
+  .resort-item img,.resort-info{width:100%}
+  .resort-item:nth-child(even){flex-direction:column!important}
+}
 
 /* --- VOUCHER --- */
 .voucher{text-align:center;background:#0077b6;color:#fff;padding:50px 20px}
@@ -99,7 +107,7 @@ footer{background:#03045e;color:#caf0f8;text-align:center;padding:20px;margin-to
 <section id="regions" class="regions">
   <h2>Điểm đến nổi bật</h2>
   <div class="region-grid">
-    <div class="region"><img src="https://images.unsplash.com/photo-1533055640609-24b498dfd77d" alt=""><h3>Hà Nội</h3></div>
+    <div class="region"><img src="https://plus.unsplash.com/premium_photo-1691960159290-6f4ace6e6c4c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""><h3>Hà Nội</h3></div>
     <div class="region"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt=""><h3>Đà Lạt</h3></div>
     <div class="region"><img src="https://images.unsplash.com/photo-1521207418485-99c705420785" alt=""><h3>Huế</h3></div>
     <div class="region"><img src="https://images.unsplash.com/photo-1543248939-ff40856f65d4" alt=""><h3>TP. Hồ Chí Minh</h3></div>
@@ -109,11 +117,45 @@ footer{background:#03045e;color:#caf0f8;text-align:center;padding:20px;margin-to
 <!-- ========== RESORTS ========== -->
 <section id="resorts" class="resorts">
   <h2>Resort nổi bật</h2>
-  <div class="resort-list">
-    <div class="resort"><img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb2101f" alt=""><h4>Vinpearl Nha Trang</h4></div>
-    <div class="resort"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" alt=""><h4>InterContinental Đà Nẵng</h4></div>
-    <div class="resort"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt=""><h4>Phú Quốc Resort</h4></div>
-    <div class="resort"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt=""><h4>Six Senses Côn Đảo</h4></div>
+
+  <div class="resort-item">
+    <img src="https://images.unsplash.com/photo-1587772495731-909d40b30851?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGh1JTIwcXVvY3xlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="">
+    <div class="resort-info">
+      <h3>Vinpearl Nha Trang</h3>
+      <p>Thiên đường nghỉ dưỡng với biển xanh, cát trắng và dịch vụ đẳng cấp quốc tế, nơi lý tưởng để thư giãn cùng gia đình và bạn bè.</p>
+    </div>
+  </div>
+
+  <div class="resort-item">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" alt="">
+    <div class="resort-info">
+      <h3>InterContinental Đà Nẵng</h3>
+      <p>Nằm giữa núi rừng Sơn Trà, nơi đây mang lại không gian sang trọng kết hợp với thiên nhiên hoang sơ tuyệt đẹp.</p>
+    </div>
+  </div>
+
+  <div class="resort-item">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="">
+    <div class="resort-info">
+      <h3>Phú Quốc Resort</h3>
+      <p>Hòn đảo ngọc nổi tiếng với bãi biển trong vắt, hoàng hôn rực rỡ và trải nghiệm nghỉ dưỡng khó quên.</p>
+    </div>
+  </div>
+
+  <div class="resort-item">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="">
+    <div class="resort-info">
+      <h3>Six Senses Côn Đảo</h3>
+      <p>Đắm mình giữa không gian yên bình, nơi giao hòa giữa biển cả và núi rừng, mang lại cảm giác thư thái tuyệt đối.</p>
+    </div>
+  </div>
+
+  <div class="resort-item">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="">
+    <div class="resort-info">
+      <h3>Amanoi Resort Ninh Thuận</h3>
+      <p>Khu nghỉ dưỡng cao cấp nằm trong Vườn quốc gia Núi Chúa, nổi tiếng với thiết kế hòa quyện cùng thiên nhiên.</p>
+    </div>
   </div>
 </section>
 
@@ -130,23 +172,37 @@ footer{background:#03045e;color:#caf0f8;text-align:center;padding:20px;margin-to
 </footer>
 </main>
 
-<!-- ========== SCRIPT ========== -->
+<!-- ========== SCRIPT (slider) ========== -->
 <script>
 const slidesData = [
   {img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e",caption:"Vịnh Hạ Long – Kỳ quan thiên nhiên thế giới"},
   {img:"https://images.unsplash.com/photo-1506744038136-46273834b3fb",caption:"Đà Nẵng – Thành phố của những cây cầu"},
   {img:"https://images.unsplash.com/photo-1526772662000-3f88f10405ff",caption:"Huế – Cố đô thơ mộng"},
-  {img:"https://images.unsplash.com/photo-1491553895911-0055eca6402d",caption:"Hà Giang – Nơi cực Bắc Tổ quốc"},
+  {img:"https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1",caption:"Hà Giang – Nơi cực Bắc Tổ quốc"},
   {img:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",caption:"Hội An – Phố cổ lung linh đèn lồng"},
-  {img:"https://images.unsplash.com/photo-1533106418989-88406c7cc8bb",caption:"Ninh Bình – Vịnh Hạ Long trên cạn"},
+  {img:"https://images.unsplash.com/photo-1658297908384-08d9248a00c8",caption:"Ninh Bình – Vịnh Hạ Long trên cạn"},
   {img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470",caption:"Phú Quốc – Đảo ngọc thiên đường"},
-  {img:"https://images.unsplash.com/photo-1559599238-5c4e7d4e4293",caption:"Sa Pa – Thành phố trong mây"}
+  {img:"https://images.unsplash.com/photo-1509030450996-dd1a26dda07a",caption:"Sa Pa – Thành phố trong mây"}
 ];
 
 const track = document.getElementById("track");
 const captionEl = document.getElementById("caption");
 const dotsWrap = document.getElementById("dotsWrap");
 let slides=[],index=0,slideW=0,gap=16,step=0,baseOffset=0,isDragging=false,startX=0,scrollX=0,velocity=0,dots=[];
+
+// Cuộn mượt đến phần được nhấn
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70, // trừ chiều cao header nếu cần
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 
 function initSlides(){
   const clones=[slidesData.at(-2),slidesData.at(-1),...slidesData,slidesData[0],slidesData[1]];
