@@ -59,4 +59,4 @@ setInterval(() => {
   index++;
   if (index > slides.length - visibleCount) index = 0;
   updateSlider();
-}, 4000);
+}, 3000);
