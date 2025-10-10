@@ -425,11 +425,12 @@ section h2 {
 }
 
 .intro-content h2 {
-    font-size: 2rem;
+    font-size: 36px;
     font-style: italic;
     margin-bottom: 16px;
     max-width: 750px;
     justify-self: center;
+    font-family: "Geofanny", sans-serif;
 
     /* font-family: "Geofanny", cursive;
     font-weight: 400;
@@ -515,7 +516,7 @@ section h2 {
 
 .region-card img {
     width: 460px;
-    height: 350px;
+    height: 100%;
     object-fit: cover;
     filter: brightness(0.75);
     transition: filter 0.3s ease;
@@ -638,15 +639,6 @@ section h2 {
     color: #555;
 }
 
-.cards {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    max-width: 2043px;
-    max-height: 2014px;
-    margin: 0 auto;
-}
-
 .card {
     display: flex;
     align-items: center;
@@ -654,10 +646,12 @@ section h2 {
     border-radius: 12px;
     overflow: hidden;
     justify-content: center;
-    width: 1266px;
-    height: 640px;
+    /* width: 1266px; */
+    /* height: 640px; */
     align-self: center;
     /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    margin-bottom: 50px;
+    gap: 30px;
 }
 
 .card.reverse {
@@ -675,7 +669,7 @@ section h2 {
 }
 
 .card .content {
-    padding: 30px;
+    /* padding: 30px; */
     width: 50%;
 }
 
@@ -801,7 +795,7 @@ button:hover {
 
 .adventure-card img {
     width: 700px;
-    height: 440px;
+    height: 100%;
     object-fit: cover;
     filter: brightness(0.7);
     transition: filter 0.3s ease;
@@ -1194,7 +1188,7 @@ button:hover {
 }
 
 .footer-partners h3 {
-    font-size: 1.3rem;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -1202,7 +1196,7 @@ button:hover {
 .partners-logos {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 5%;
     flex-wrap: wrap;
 }
 

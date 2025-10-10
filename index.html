@@ -486,6 +486,14 @@
             toggleButton.addEventListener("click", () => {
                 sidebar.classList.toggle("active");
             });
+            
+            // Sự kiện nhấn ra ngoài để đóng menu
+            document.addEventListener("click", (event) => {
+                // Kiểm tra nếu click KHÔNG nằm trong sidebar và KHÔNG nằm trên nút toggle
+                if (sidebar.classList.contains("active") && !sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
+                    sidebar.classList.remove("active");
+                }
+            });
         </script>
     </body>
 </html>
