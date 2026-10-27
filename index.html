@@ -1,533 +1,225 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vietnam Travel — Infinite Slider</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SH Express — vận chuyển quốc tế minh bạch, an toàn, tối ưu chi phí. Gửi hàng đi Mỹ, Úc, Canada, Anh, Hàn Quốc, Nhật Bản và hơn 200 quốc gia." />
+  <meta name="theme-color" content="#111111" />
+  <title>SH Express — Vận chuyển quốc tế nhanh chóng, minh bạch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">Đặt giao hàng ngay bây giờ <span>·</span> trước 17:00 mỗi ngày <span>++</span></div>
 
-    <body>
-        <header>
-            <nav>
-                <ul class="nav-left">
-                    <li><div class="menu-toggle" id="menu-toggle">&#9776;</div></li>
-                </ul>
-                <div class="logo"><img class="logo-image" src="./img/LOGO/LOGO Minh di dau day.png" /></div>
-                <ul class="nav-right">
-                    <li><a style="color: black" href="#vn">VN</a></li>
-                    <li style="color: black">|</li>
-                    <li><a style="color: grey" href="#en">EN</a></li>
-                </ul>
-            </nav>
-        </header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="SH Express - Trang chủ">
+        <img src="../web/assets/logo.png" alt="SH Express" />
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="index.html#home">TRANG CHỦ</a>
+        <a href="index.html#about">GIỚI THIỆU</a>
+        <div class="nav-group"><a href="dich-vu-nhat.html">DỊCH VỤ</a><div class="nav-dropdown"><a href="dich-vu-nhat.html">Vận chuyển đến Nhật Bản</a><a href="dich-vu-my.html">Vận chuyển đến Mĩ</a><a href="bang-gia.html">Tuyến vận chuyển quốc tế</a></div></div>
+        <div class="nav-group"><a href="goi-van-chuyen-hang-khong.html">GÓI VẬN CHUYỂN</a><div class="nav-dropdown"><a href="goi-van-chuyen-hang-khong.html">Gói cước Hàng không</a><a href="goi-van-chuyen-duong-thuy.html">Gói cước Đường biển</a><a href="goi-van-chuyen-duong-bo.html">Gói cước Đường bộ</a><a href="goi-van-chuyen-hoa-toc.html">Gói cước Hỏa tốc / Tiết kiệm</a></div></div>
+        <a href="bang-gia.html">BẢNG GIÁ</a>
+        <a href="index.html#news">TIN TỨC &amp; SỰ KIỆN</a>
+        <a href="index.html#contact">LIÊN HỆ</a>
+        <a class="profile-link" href="#contact" aria-label="Tài khoản"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Zm0 2c-4 0-7.2 2-7.2 4.5V21h14.4v-2.5c0-2.5-3.2-4.5-7.2-4.5Z"/></svg></a>
+        <div class="language-switch" aria-label="Ngôn ngữ"><button class="selected" type="button">VN</button><span></span><button type="button" aria-label="English">EN</button></div>
+      </nav>
+    </div>
+  </header>
 
-        <div class="sidebar" id="sidebar">
-            <div class="menu-content">
-                <p>CÁC ĐỊA ĐIỂM NỔI BẬT</p>
-                <p>“MẠO HIỂM” KHÔNG</p>
-                <p>RESORT - HOTEL YÊU THÍCH</p>
-                <p>VOUCHER</p>
-                <p>CỬA HÀNG TIỆN DỤNG</p>
-                <hr />
-                <p>LIÊN HỆ</p>
-                <p>FAQ</p>
-                <div class="footer-text">Mình đi đâu đây!</div>
+  <main>
+    <section class="hero" id="home" aria-label="Dịch vụ vận chuyển quốc tế">
+      <div class="hero-shade"></div>
+      <div class="hero-inner">
+        <form class="tracking-card" id="tracking-form">
+          <div class="tracking-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3.5 7.8 8.5 4.4 8.5-4.4M12 12.2V21M7.5 5.3l9 4.6"/></svg></div>
+          <p class="eyebrow">SH EXPRESS · THEO DÕI ĐƠN HÀNG</p>
+          <h1>Hành trình của bạn,<br /><span>luôn trong tầm mắt.</span></h1>
+          <p class="tracking-copy">Theo dõi đơn hàng 24/7 — nhanh chóng, rõ ràng và chủ động.</p>
+          <label class="sr-only" for="tracking-code">Mã đơn hàng hoặc số điện thoại</label>
+          <div class="tracking-controls">
+            <input id="tracking-code" name="tracking-code" type="text" placeholder="Nhập mã đơn hàng hoặc SĐT" autocomplete="off" />
+            <button class="button button-gold" type="submit">THEO DÕI <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="tracking-feedback" id="tracking-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <div class="hero-caption"><span class="caption-dot"></span><div><strong>Dịch vụ gửi hàng quốc tế SH Express</strong><br />Chuyên tuyến Mỹ · Úc · Canada · UK<br />Hàn · Nhật và hơn 200 quốc gia</div></div>
+        <a class="scroll-cue" href="#about" aria-label="Cuộn xuống"><span></span></a>
+      </div>
+    </section>
+
+    <section class="about section-shell" id="about">
+      <div class="section-wrap">
+        <div class="section-kicker"><span></span> VỀ CHÚNG TÔI</div>
+        <div class="about-grid">
+          <div class="about-photo image-frame">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Nhân viên xử lý hàng hóa tại kho SH Express" loading="lazy" />
+            <div class="experience-badge"><strong>15<small>+</small></strong><span>NĂM KINH NGHIỆM<br />VẬN CHUYỂN</span></div>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">KẾT NỐI HÀNG HÓA, VƯƠN XA TOÀN CẦU</p>
+            <h2>Soha Express — giải pháp vận chuyển quốc tế <em>chuyên nghiệp, an toàn &amp; minh bạch</em></h2>
+            <p>SH Express là đơn vị chuyên cung cấp dịch vụ vận chuyển hàng hóa quốc tế. Với kinh nghiệm trong lĩnh vực logistics, chúng tôi đồng hành cùng khách hàng từ lúc tư vấn, nhận hàng đến khi đơn hàng được giao tận tay.</p>
+            <p>Mỗi kiện hàng được xử lý theo quy trình rõ ràng, chi phí được tư vấn trước và trạng thái luôn được cập nhật để bạn an tâm trên suốt hành trình.</p>
+            <div class="stats-row">
+              <div><strong>200<sup>+</sup></strong><span>QUỐC GIA &amp; VÙNG LÃNH THỔ</span></div>
+              <div><strong>24<sup>/7</sup></strong><span>THEO DÕI ĐƠN HÀNG</span></div>
+              <div><strong>15<sup>+</sup></strong><span>NĂM KINH NGHIỆM</span></div>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <main>
-            <!-- ========== HERO / HOME ========== -->
-            <section id="home" class="hero">
-                <!-- <h1>Explore the Vietnam</h1> -->
-                <!-- <p>Khám phá vẻ đẹp từ Bắc chí Nam</p> -->
+    <section class="values section-shell" id="values">
+      <div class="section-wrap">
+        <div class="section-kicker"><span></span> TRẢI NGHIỆM SH EXPRESS</div>
+        <div class="values-intro">
+          <h2>Dịch vụ chu đáo,<br /><em>an tâm trên từng chặng đường.</em></h2>
+          <p>Từ báo giá đến giao nhận, mọi thông tin đều được trao đổi rõ ràng để bạn luôn chủ động với đơn hàng của mình.</p>
+        </div>
+        <article class="value-row">
+          <div class="value-copy">
+            <span class="value-number">01</span>
+            <h3>Minh bạch trong tư vấn.<br /><em>Rõ ràng trong chi phí.</em></h3>
+            <p>SH Express đề cao sự minh bạch và rõ ràng trong từng đơn hàng. Khách hàng được tư vấn cụ thể về phương thức vận chuyển, thời gian dự kiến, chi phí và các điều kiện liên quan trước khi gửi hàng.</p>
+            <p>Đối với những đơn hàng có yêu cầu đặc biệt, đội ngũ SH Express sẽ trao đổi trực tiếp để lựa chọn phương án phù hợp, giúp kiểm soát chi phí và hạn chế những phát sinh không cần thiết.</p>
+            <p>Chính sách bảo hiểm và các điều khoản liên quan cũng được tư vấn rõ ràng, giúp khách hàng chủ động nắm được quyền lợi và trách nhiệm trong quá trình sử dụng dịch vụ.</p>
+            <a class="text-link" href="#contact">Tư vấn cùng chuyên viên <span>↗</span></a>
+          </div>
+          <div class="value-image image-frame">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Chuyên viên tư vấn phương án vận chuyển cho khách hàng" loading="lazy" />
+            <span class="image-label">TƯ VẤN TẬN TÂM · BÁO GIÁ RÕ RÀNG</span>
+          </div>
+        </article>
+        <article class="value-row value-row-reverse">
+          <div class="value-image image-frame">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Cẩu container hàng hóa tại cảng biển" loading="lazy" />
+            <span class="image-label">GOM HÀNG LINH HOẠT · TỐI ƯU CHI PHÍ</span>
+          </div>
+          <div class="value-copy">
+            <span class="value-number">02</span>
+            <h3>Hỗ trợ gom hàng<br /><em>từ nhiều nguồn.</em></h3>
+            <p>SH Express cung cấp dịch vụ gom hàng và vận chuyển linh hoạt, phù hợp với cá nhân, hộ kinh doanh và doanh nghiệp có nhu cầu gửi hàng thường xuyên.</p>
+            <h4>CHÚNG TÔI HỖ TRỢ:</h4>
+            <ul class="support-list">
+              <li>Gom hàng từ các sàn thương mại điện tử như Shopee, TikTok Shop, Lazada...</li>
+              <li>Nhận hàng từ các tỉnh gửi về thành phố để tổng hợp.</li>
+              <li>Hỗ trợ nhận hàng tại bến xe hoặc theo phương án đã thống nhất. Gộp nhiều đơn hàng thành một lô để tối ưu chi phí vận chuyển.</li>
+              <li>Tư vấn phương án đóng gói và vận chuyển theo từng loại hàng.</li>
+            </ul>
+            <a class="text-link" href="#contact">Tìm phương án phù hợp <span>↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                <div class="slider-container">
-                    <button class="btn-prev" aria-label="Prev">&lsaquo;</button>
-                    <div class="slider-viewport">
-                        <div class="slide-track" id="track"></div>
-                    </div>
-                    <button class="btn-next" aria-label="Next">&rsaquo;</button>
-                    <div class="caption" id="caption"></div>
-                    <div class="dots-wrap" id="dotsWrap"></div>
-                </div>
-            </section>
+    <section class="why-us section-shell" id="why-us">
+      <div class="section-wrap">
+        <div class="section-heading"><div><div class="section-kicker"><span></span> VÌ SAO CHỌN SH EXPRESS</div><h2>Đồng hành tận tâm,<br /><em>an tâm gửi hàng.</em></h2></div><p class="why-intro">Mỗi dịch vụ được xây dựng xoay quanh điều khách hàng cần: thông tin rõ ràng, quy trình thuận tiện và hỗ trợ đáng tin cậy.</p></div>
+        <div class="why-grid">
+          <article class="why-card"><span class="why-icon"><svg viewBox="0 0 32 32"><path d="M16 3 5 7v8c0 7 4.5 11.7 11 15 6.5-3.3 11-8 11-15V7L16 3Z"/><path d="m11 16 3.2 3.2L21.5 12"/></svg></span><h3>An toàn hàng hóa</h3><p>Kiểm tra, đóng gói và bàn giao theo quy trình phù hợp với từng loại hàng.</p></article>
+          <article class="why-card"><span class="why-icon"><svg viewBox="0 0 32 32"><path d="M4 8h15v15H4zM19 13h5l4 5v5h-9z"/><circle cx="10" cy="25" r="3"/><circle cx="23" cy="25" r="3"/><path d="M7 12h8M7 16h5"/></svg></span><h3>Lựa chọn linh hoạt</h3><p>Tư vấn phương thức vận chuyển phù hợp với điểm đến, thời gian và ngân sách.</p></article>
+          <article class="why-card"><span class="why-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3M5 16h3m16 0h3"/></svg></span><h3>Chủ động theo dõi</h3><p>Cung cấp mã vận đơn và cập nhật hành trình để bạn nắm bắt tiến độ.</p></article>
+          <article class="why-card"><span class="why-icon"><svg viewBox="0 0 32 32"><path d="M6 9h20v17H6zM11 9V6h10v3M10 15h12M10 20h8"/><path d="m22 24 2 2 4-5"/></svg></span><h3>Minh bạch chi phí</h3><p>Thông tin về dịch vụ, chi phí và điều kiện được trao đổi trước khi gửi.</p></article>
+          <article class="why-card"><span class="why-icon"><svg viewBox="0 0 32 32"><path d="M4 10h24v17H4zM9 10V6h14v4M11 16h10M11 21h6"/><path d="M4 14h24"/></svg></span><h3>Hỗ trợ gom hàng</h3><p>Gộp đơn từ nhiều nguồn và tư vấn cách đóng gói để tối ưu phương án gửi.</p></article>
+          <article class="why-card"><span class="why-icon"><svg viewBox="0 0 32 32"><path d="M16 4a10 10 0 0 0-6 18v5h12v-5a10 10 0 0 0-6-18Z"/><path d="M12 27h8M13 12h6M16 9v6"/></svg></span><h3>Tư vấn tận tâm</h3><p>Đội ngũ đồng hành từ lúc chọn dịch vụ đến khi hàng hóa được bàn giao.</p></article>
+        </div>
+      </div>
+    </section>
 
-            <section class="intro-section">
-                <div class="brush-bg"></div>
-                <div class="intro-content">
-                    <h2>Cùng Khám Phá Việt Nam Bạn Nhé!</h2>
-                    <p class="intro-p">Vietnam Travel là cẩm nang du lịch và nền tảng trải nghiệm giúp bạn khám phá mọi vùng đất Việt Nam một cách chân thật nhất.</p>
-                    <p class="intro-p">Chúng tôi kết nối bạn với địa điểm độc đáo, ẩm thực bản địa, trải nghiệm văn hoá, và con người thân thiện khắp ba miền.</p>
-                    <p class="intro-p">Du lịch không chỉ là đi — mà là cảm nhận, sống và lưu giữ kỷ niệm.</p>
-                </div>
-            </section>
+    <section class="services section-shell" id="services">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker"><span></span> GIẢI PHÁP VẬN CHUYỂN</div><h2>Một đối tác tin cậy.<br /><em>Nhiều lựa chọn linh hoạt.</em></h2></div>
+          <div class="carousel-tools"><a class="text-link" href="goi-van-chuyen-hang-khong.html">Khám phá dịch vụ <span>↗</span></a><button class="carousel-arrow" type="button" data-scroll="prev" aria-label="Dịch vụ trước">←</button><button class="carousel-arrow" type="button" data-scroll="next" aria-label="Dịch vụ tiếp theo">→</button></div>
+        </div>
+        <div class="service-grid drag-carousel" id="service-carousel">
+          <a class="service-card" href="goi-van-chuyen-hang-khong.html"><div class="service-photo"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Vận chuyển hàng hóa bằng đường hàng không" loading="lazy" /><span class="service-icon">01</span></div><div class="service-meta"><span>01 / NHANH CHÓNG</span><span>↗</span></div><h3>Vận chuyển<br />đường hàng không</h3><p>Giải pháp tối ưu cho đơn hàng cần giao nhanh, hàng mẫu và hồ sơ quan trọng.</p></a>
+          <a class="service-card" href="goi-van-chuyen-duong-thuy.html"><div class="service-photo"><img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Tàu container vận chuyển đường biển" loading="lazy" /><span class="service-icon">02</span></div><div class="service-meta"><span>02 / TIẾT KIỆM</span><span>↗</span></div><h3>Vận chuyển<br />đường biển</h3><p>Phù hợp hàng hóa cồng kềnh, lô hàng lớn và nhu cầu tối ưu ngân sách.</p></a>
+          <a class="service-card" href="goi-van-chuyen-duong-bo.html"><div class="service-photo"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Vận chuyển hàng hóa bằng đường bộ" loading="lazy" /><span class="service-icon">03</span></div><div class="service-meta"><span>03 / LINH HOẠT</span><span>↗</span></div><h3>Vận chuyển<br />đường bộ</h3><p>Kết nối điểm nhận và giao hàng linh hoạt theo kế hoạch của bạn.</p></a>
+          <a class="service-card" href="goi-van-chuyen-hoa-toc.html"><div class="service-photo"><img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Dịch vụ chuyển phát hỏa tốc" loading="lazy" /><span class="service-icon">04</span></div><div class="service-meta"><span>04 / THEO NHU CẦU</span><span>↗</span></div><h3>Gói hỏa tốc<br />&amp; tiết kiệm</h3><p>Chọn ưu tiên tốc độ hoặc ngân sách cho từng đơn hàng.</p></a>
+        </div>
+      </div>
+    </section>
 
-            <section class="regions">
-                <h2>BẮT ĐẦU HÀNH TRÌNH THEO VÙNG MIỀN</h2>
-                <p>Mỗi vùng miền Việt Nam đều có những “mảng màu” riêng được dệt nên từ bản sắc văn hoá của mỗi vùng đất.</p>
+    <section class="homepage-pricing section-shell" id="pricing">
+      <div class="section-wrap">
+        <div class="section-kicker"><span></span> TUYẾN ĐƯỜNG NỔI BẬT</div>
+        <div class="section-heading"><div><h2>Bảng giá dịch vụ<br /><em>thường được lựa chọn.</em></h2></div><a class="text-link" href="bang-gia.html">Xem tất cả tuyến <span>↗</span></a></div>
+        <div class="route-panel"><div class="route-grid">
+          <article class="route-card"><div class="route-country"><img src="https://flagcdn.com/w160/us.png" alt="Cờ Mĩ" loading="lazy" /><div><small>CHUYỂN PHÁT QUỐC TẾ</small><h3>Mĩ</h3></div></div><p>Thời gian dự kiến <strong>3–6 ngày làm việc</strong></p><p>Tư vấn cước phí theo loại hàng và điểm đến</p><a href="dich-vu-my.html">Xem chi tiết <span>→</span></a></article>
+          <article class="route-card"><div class="route-country"><img src="https://flagcdn.com/w160/jp.png" alt="Cờ Nhật Bản" loading="lazy" /><div><small>CHUYỂN PHÁT QUỐC TẾ</small><h3>Nhật Bản</h3></div></div><p>Thời gian dự kiến <strong>2–5 ngày làm việc</strong></p><p>Tư vấn cước phí theo loại hàng và điểm đến</p><a href="dich-vu-nhat.html">Xem chi tiết <span>→</span></a></article>
+          <article class="route-card"><div class="route-country"><img src="https://flagcdn.com/w160/kr.png" alt="Cờ Hàn Quốc" loading="lazy" /><div><small>CHUYỂN PHÁT QUỐC TẾ</small><h3>Hàn Quốc</h3></div></div><p>Thời gian dự kiến <strong>2–5 ngày làm việc</strong></p><p>Tư vấn cước phí theo loại hàng và điểm đến</p><a href="bang-gia.html">Xem chi tiết <span>→</span></a></article>
+        </div></div>
+      </div>
+    </section>
 
-                <div class="region-cards">
-                    <div class="region-card">
-                        <img src=".\img\Section_3_MienBac.jpg" alt="Miền Bắc" />
-                        <div class="region-content">
-                            <h3>MIỀN<br />BẮC</h3>
-                        </div>
-                        <div class="arrow-btn">
-                            <img src=".\img\icon\BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                    </div>
+    <section class="partners-strip" aria-label="Đối tác vận chuyển">
+      <div class="section-wrap"><p>ĐỐI TÁC VẬN CHUYỂN UY TÍN</p><div class="partner-logos"><img src="../web/assets/logo-fedex.png" alt="FedEx" loading="lazy" /><img src="../web/assets/logo-ups.png" alt="UPS" loading="lazy" /><img src="../web/assets/logo-dhl.png" alt="DHL" loading="lazy" /><img src="../web/assets/logo-usps.png" alt="USPS" loading="lazy" /><img src="../web/assets/logo-tnt.png" alt="TNT" loading="lazy" /><img src="../web/assets/logo-vnpost.png" alt="Vietnam Post" loading="lazy" /><img src="../web/assets/logo-auspost.png" alt="Australia Post" loading="lazy" /><img src="../web/assets/logo-canadapost.png" alt="Canada Post" loading="lazy" /><img src="../web/assets/logo-japanpost.png" alt="Japan Post" loading="lazy" /></div></div>
+    </section>
 
-                    <div class="region-card">
-                        <img src=".\img\Section_3_MienTrung.jpg" alt="Miền Trung" />
-                        <div class="region-content">
-                            <h3>MIỀN<br />TRUNG</h3>
-                        </div>
-                        <div class="arrow-btn">
-                            <img src=".\img\icon\BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                    </div>
+    <section class="trust-band">
+      <div class="trust-shade"></div><div class="section-wrap trust-wrap"><div class="trust-panel">
+        <article><span class="trust-icon">✦</span><h3>Được doanh nghiệp tin tưởng</h3><p>Đồng hành cùng khách hàng cá nhân và doanh nghiệp trên nhiều tuyến vận chuyển.</p></article>
+        <article><span class="trust-icon">◎</span><h3>Hỗ trợ thủ tục chuyên nghiệp</h3><p>Tư vấn thông tin hàng hóa, chứng từ và quy trình trước khi gửi.</p></article>
+        <article><span class="trust-icon">⌖</span><h3>Theo dõi hành trình minh bạch</h3><p>Cập nhật tình trạng đơn hàng để bạn chủ động trên từng chặng đường.</p></article>
+      </div></div>
+    </section>
 
-                    <div class="region-card">
-                        <img src=".\img\Section_3_MienNam.jpg" alt="Miền Nam" />
-                        <div class="region-content">
-                            <h3>MIỀN<br />NAM</h3>
-                        </div>
-                        <div class="arrow-btn">
-                            <img src=".\img\icon\BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section class="news section-shell" id="news">
+      <div class="section-wrap">
+        <div class="section-heading"><div><div class="section-kicker"><span></span> CẬP NHẬT MỚI</div><h2>Tin tức &amp; <em>kinh nghiệm gửi hàng.</em></h2></div><a class="text-link" href="#contact">Xem tất cả <span>↗</span></a></div>
+        <div class="news-featured">
+          <article class="news-main-card"><a href="#contact" class="news-main-photo"><img src="../web/assets/news-main.png" alt="Bánh trung thu được chuẩn bị đóng gói gửi đi quốc tế" loading="lazy" /></a><div class="news-main-body"><div class="news-meta"><span>HƯỚNG DẪN</span><span>5 PHÚT ĐỌC</span></div><h3>Đóng gói bánh trung thu đúng cách khi gửi đi nước ngoài</h3><p>Để bánh giữ được hương vị và hình dáng trong suốt hành trình, việc lựa chọn bao bì và quy cách đóng gói phù hợp là rất quan trọng.</p><a class="text-link" href="#contact">Đọc bài viết <span>↗</span></a></div></article>
+          <div class="news-side-list">
+            <article class="news-side-card"><a href="#contact"><img src="../web/assets/news-1.png" alt="Quy định gửi hàng quốc tế" loading="lazy" /></a><div><div class="news-meta"><span>THÔNG TIN</span></div><h3>Lưu ý về quy định nhập hàng quốc tế</h3><a class="text-link" href="#contact">Xem chi tiết <span>↗</span></a></div></article>
+            <article class="news-side-card"><a href="#contact"><img src="../web/assets/news-2.png" alt="Cập nhật tuyến vận chuyển" loading="lazy" /></a><div><div class="news-meta"><span>CẬP NHẬT</span></div><h3>Cập nhật thông tin các tuyến gửi hàng</h3><a class="text-link" href="#contact">Xem chi tiết <span>↗</span></a></div></article>
+            <article class="news-side-card"><a href="#contact"><img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Kiện hàng được chuẩn bị để gửi" loading="lazy" /></a><div><div class="news-meta"><span>KINH NGHIỆM</span></div><h3>Chuẩn bị kiện hàng trước khi gửi đi xa</h3><a class="text-link" href="#contact">Xem chi tiết <span>↗</span></a></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- TRAVEL SECTION -->
-            <div class="travel-section">
-                <section class="travel-hero">
-                    <h2>Đi theo “Những bước chân sớm”</h2>
-                    <p>Bạn có thể khám phá những nơi nổi bật của Việt Nam qua hành trình phiêu lưu những vùng đất mới - nơi là người đến.</p>
-                </section>
+    <section class="testimonials section-shell" id="feedback">
+      <div class="section-wrap">
+        <div class="testimonial-heading"><div class="section-kicker"><span></span> KHÁCH HÀNG NÓI GÌ</div><h2>Niềm tin được gửi<br /><em>qua từng đơn hàng.</em></h2><div class="testimonial-controls"><button class="carousel-arrow" type="button" data-testimonial="prev" aria-label="Đánh giá trước">←</button><button class="carousel-arrow" type="button" data-testimonial="next" aria-label="Đánh giá tiếp theo">→</button></div></div>
+        <div class="testimonial-viewport"><div class="testimonial-track" id="testimonial-track">
+          <article class="testimonial-card"><img src="../web/assets/avatar.png" alt="Khách hàng SH Express" loading="lazy" /><div class="stars">★★★★★</div><p>“Được tư vấn rõ ràng, đơn hàng đi thuận lợi và mình luôn nắm được thông tin trong quá trình vận chuyển.”</p><strong>Khách hàng cá nhân</strong><span>Gửi hàng quốc tế</span></article>
+          <article class="testimonial-card"><img src="../web/assets/avatar.png" alt="Khách hàng doanh nghiệp" loading="lazy" /><div class="stars">★★★★★</div><p>“Đội ngũ hỗ trợ nhiệt tình, hướng dẫn từng bước và giúp chúng tôi chọn được phương án phù hợp.”</p><strong>Khách hàng doanh nghiệp</strong><span>Dịch vụ vận chuyển</span></article>
+          <article class="testimonial-card"><img src="../web/assets/avatar.png" alt="Khách hàng shop online" loading="lazy" /><div class="stars">★★★★★</div><p>“Gom hàng từ nhiều nguồn tiện lợi, khâu trao đổi nhanh chóng và chi phí được thông tin trước.”</p><strong>Chủ shop online</strong><span>Dịch vụ gom hàng</span></article>
+          <article class="testimonial-card"><img src="../web/assets/avatar.png" alt="Khách hàng thân thiết" loading="lazy" /><div class="stars">★★★★★</div><p>“Tôi an tâm hơn vì có mã theo dõi và được hỗ trợ khi cần cập nhật hành trình kiện hàng.”</p><strong>Khách hàng thân thiết</strong><span>Gửi hàng đi Nhật</span></article>
+        </div></div>
+      </div>
+    </section>
 
-                <section class="cards">
-                    <!-- Card 1 -->
-                    <div class="card">
-                        <div class="image-wrapper">
-                            <img src=".\img\Section_4_NuiBaDen.jpg" alt="Búi Bà Đen" />
-                        </div>
-                        <div class="content">
-                            <h3>Núi Bà Đen</h3>
-                            <p>Tỉnh Tây Ninh - Phía Nam Việt Nam</p>
-                            <p class="desc">Du khách có thể chinh phục đỉnh núi bằng cáp treo hiện đại hoặc leo bộ giữa rừng xanh, thưởng ngoạn khung cảnh mây trời kỳ vĩ, đặc biệt là biển mây huyền ảo vào sáng sớm. Trên đỉnh là Tượng Phật Bà Tây Bổ Đà Sơn – một trong những tượng Phật bằng đồng cao nhất châu Á, biểu tượng cho sự bình an và từ bi.</p>
-                            <button class="btn-explore">Khám phá</button>
-                        </div>
-                    </div>
+  </main>
 
-                    <!-- Card 2 -->
-                    <div class="card reverse">
-                        <div class="image-wrapper">
-                            <img src=".\img\Section_4_CHOnoi.jpg" alt="Chợ Nổi" />
-                        </div>
-                        <div class="content">
-                            <h3>Chợ Nổi</h3>
-                            <p>Tỉnh Cần Thơ - Phía Tây Việt Nam</p>
-                            <p class="desc">“Cần Thơ gạo trắng nước trong – Ai đi đến đó lòng không muốn về” – câu ca xưa vẫn đúng đến hôm nay, khi nơi đây vẫn giữ trọn nét duyên sông nước và sự nồng hậu của con người Nam Bộ.</p>
-                            <button class="btn-explore">Khám phá</button>
-                        </div>
-                    </div>
+  <footer class="site-footer" id="contact">
+    <div class="footer-main">
+      <div class="footer-brand"><a href="#home"><img src="../web/assets/logo.png" alt="SH Express" /></a><p>Chuyển phát nhanh quốc tế<br />An toàn · Minh bạch · Tận tâm</p><div class="social-links"><a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="TikTok">♪</a><a href="#contact" aria-label="Zalo">Z</a></div></div>
+      <div><h3>KHÁM PHÁ</h3><a href="#about">Về chúng tôi</a><a href="#services">Dịch vụ vận chuyển</a><a href="#pricing">Nhận báo giá</a><a href="#news">Tin tức &amp; sự kiện</a></div>
+      <div><h3>DỊCH VỤ</h3><a href="#services">Vận chuyển hàng không</a><a href="#services">Vận chuyển đường biển</a><a href="#services">Gom hàng nhiều nguồn</a><a href="#services">Giao nhận tận nơi</a></div>
+      <div><h3>LIÊN HỆ</h3><a href="tel:+84976757226">0976 757 226</a><a href="mailto:info@sohaexpress.vn">info@sohaexpress.vn</a><p>Hỗ trợ tư vấn từ Thứ 2 đến Thứ 7</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 SH Express. Bảo lưu mọi quyền.</span><span>Vận chuyển quốc tế — Kết nối không biên giới.</span></div>
+  </footer>
 
-                    <!-- Card 3 -->
-                    <div class="card">
-                        <div class="image-wrapper">
-                            <img src=".\img\Section_4_ganhphuyen.jpg" alt="Gành Đá Đĩa" />
-                        </div>
-                        <div class="content">
-                            <h3>Gành Đá Đĩa</h3>
-                            <p>Tỉnh Phú Yên - Miền Trung Việt Nam</p>
-                            <p class="desc">Đứng trên mũi đá, nghe sóng vỗ rì rào và ngắm bình minh rực rỡ trên biển, bạn sẽ hiểu vì sao Gành Đá Đĩa được mệnh danh là “bản giao hưởng của đá và sóng”. Được hình thành cách đây hàng triệu năm do dung nham núi lửa phun trào gặp nước biển lạnh, Gành Đá Đĩa trở thành biểu tượng tự nhiên nổi tiếng nhất của Phú Yên và là di tích quốc gia đặc biệt của Việt Nam.</p>
-                            <button class="btn-explore">Khám phá</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <section class="adventure">
-                <h2>MẠO HIỂM KHÔNG!?</h2>
-                <p>Việt Nam hùng vĩ, bạn có dám chinh phục?<br />Bạn sẽ có những cảm giác mới lạ mà mình chưa bao giờ có!</p>
-
-                <div class="adventure-cards">
-                    <div class="adventure-card">
-                        <img src="./img/Section_5_ThacK50.jpg" alt="Thác K50" />
-                        <div class="adventure-content">
-                            <h3>CHINH PHỤC<br />THÁC K50</h3>
-                        </div>
-                        <div class="arrow-btn-left">
-                            <img src="./img/icon/BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                    </div>
-
-                    <div class="adventure-card">
-                        <img src="./img/Section_5_TaNang.jpg" alt="Tà Năng" />
-                        <div class="adventure-content">
-                            <h3>CHINH PHỤC<br />TÀ NĂNG</h3>
-                        </div>
-                        <div class="arrow-btn-left">
-                            <img src="./img/icon/BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="stay-options">
-                <h2>DỪNG CHÂN ẤM ÁP</h2>
-                <p>Chúng mình vẫn không thể quên cho bạn những đề xuất dừng chân,<br />nghỉ ngơi thật lý tưởng</p>
-
-                <div class="stay-cards">
-                    <!-- Card 1 -->
-                    <div class="stay-card">
-                        <img src="./img/Section_6_homestay.jpg" alt="Homestay" />
-                        <h3>HOMESTAY</h3>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="stay-card">
-                        <img src="./img/Section_6_hotel.jpg" alt="Hotel & Motel" />
-                        <h3>HOTEL & MOTEL</h3>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="stay-card">
-                        <img src="./img/Section_6_resort.jpg" alt="Resort & Villa" />
-                        <h3>RESORT & VILLA</h3>
-                    </div>
-                </div>
-            </section>
-
-            <section class="gear-section">
-                <h2 class="gear-section-h2">CỬA HÀNG BẢO BỐI ĐỒNG HÀNH</h2>
-                <p>Cửa hàng của chúng mình liên thông với các nhãn hàng cung cấp sản phẩm, phụ kiện giúp bạn có thể mua trực tiếp các “bảo bối” để sẵn sàng thực hiện chuyến đi nhé!</p>
-
-                <div class="gear-cards">
-                    <!-- Card 1 -->
-                    <div class="gear-card gear-luggage">
-                        <div class="gear-arrow">
-                            <img src="./img/icon/BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                        <div class="gear-title">HÀNH LÍ<br />TIỆN LỢI</div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="gear-card gear-accessories">
-                        <div class="gear-arrow">
-                            <img src="./img/icon/BATDAU_ICON.png" alt="Xem thêm" />
-                        </div>
-                        <div class="gear-title">PHỤ KIỆN<br />NHỎ NHẸ</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ========== REGIONS ========== -->
-            <!-- <section id="regions" class="regions">
-                <h2>Điểm đến nổi bật</h2>
-                <div class="region-grid">
-                    <div class="region">
-                        <img src="https://plus.unsplash.com/premium_photo-1691960159290-6f4ace6e6c4c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                        <h3>Hà Nội</h3>
-                    </div>
-                    <div class="region">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="" />
-                        <h3>Đà Lạt</h3>
-                    </div>
-                    <div class="region">
-                        <img src="https://images.unsplash.com/photo-1521207418485-99c705420785" alt="" />
-                        <h3>Huế</h3>
-                    </div>
-                    <div class="region">
-                        <img src="https://images.unsplash.com/photo-1543248939-ff40856f65d4" alt="" />
-                        <h3>TP. Hồ Chí Minh</h3>
-                    </div>
-                </div>
-            </section> -->
-
-            <!-- ========== RESORTS ========== -->
-            <!-- <section id="resorts" class="resorts">
-                <h2>Resort nổi bật</h2>
-
-                <div class="resort-item">
-                    <img src="https://images.unsplash.com/photo-1587772495731-909d40b30851?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGh1JTIwcXVvY3xlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000" alt="" />
-                    <div class="resort-info">
-                        <h3>Vinpearl Nha Trang</h3>
-                        <p>Thiên đường nghỉ dưỡng với biển xanh, cát trắng và dịch vụ đẳng cấp quốc tế, nơi lý tưởng để thư giãn cùng gia đình và bạn bè.</p>
-                    </div>
-                </div>
-
-                <div class="resort-item">
-                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d" alt="" />
-                    <div class="resort-info">
-                        <h3>InterContinental Đà Nẵng</h3>
-                        <p>Nằm giữa núi rừng Sơn Trà, nơi đây mang lại không gian sang trọng kết hợp với thiên nhiên hoang sơ tuyệt đẹp.</p>
-                    </div>
-                </div>
-
-                <div class="resort-item">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="" />
-                    <div class="resort-info">
-                        <h3>Phú Quốc Resort</h3>
-                        <p>Hòn đảo ngọc nổi tiếng với bãi biển trong vắt, hoàng hôn rực rỡ và trải nghiệm nghỉ dưỡng khó quên.</p>
-                    </div>
-                </div>
-
-                <div class="resort-item">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="" />
-                    <div class="resort-info">
-                        <h3>Six Senses Côn Đảo</h3>
-                        <p>Đắm mình giữa không gian yên bình, nơi giao hòa giữa biển cả và núi rừng, mang lại cảm giác thư thái tuyệt đối.</p>
-                    </div>
-                </div>
-
-                <div class="resort-item">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="" />
-                    <div class="resort-info">
-                        <h3>Amanoi Resort Ninh Thuận</h3>
-                        <p>Khu nghỉ dưỡng cao cấp nằm trong Vườn quốc gia Núi Chúa, nổi tiếng với thiết kế hòa quyện cùng thiên nhiên.</p>
-                    </div>
-                </div>
-            </section> -->
-
-            <!-- ========== FEEDBACK ========== -->
-            <section class="feedback-section">
-                <h3>LẮNG NGHE NHỮNG BƯỚC CHÂN</h3>
-                <h5>Những bạn trẻ của chúng tôi đã đăng kí tham gia và đã có những trải nghiệm tích cực</h5>
-
-                <div class="feedback-container">
-                    <div class="feedback-item">
-                        <p class="quote">“ Mình đã có khoảng thời gian rất thoải mái và đầy thú vị bên bạn bè. ”</p>
-                        <span class="author">Nguyễn Minh Anh, 26t</span>
-                    </div>
-
-                    <div class="feedback-item">
-                        <p class="quote">“ Các tour bên mình rất hợp ví tiền và đáng trải nghiệm. ”</p>
-                        <span class="author">Hà Minh Tuấn, 28t</span>
-                    </div>
-
-                    <div class="feedback-item">
-                        <p class="quote">“ Trang web rất tiện lợi khi tích hợp booking chỗ ở. ”</p>
-                        <span class="author">Thanh Liễu, 29t</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ========== FOOTER ========== -->
-            <!-- Footer Section -->
-            <section class="footer-partners">
-                <h3 style="color: black">NHÀ ĐỒNG HÀNH</h3>
-                <div class="partners-logos">
-                    <img src="./img\LOGO\traveloka-logo-traveloka-logo-free-download-free-png.webp" alt="Traveloka" />
-                    <img src="./img/LOGO\to_ong_logo.jpg" alt="Toong" />
-                    <img src="./img/LOGO/the-north-face-1-logo-png-transparent.png" alt="The North Face" />
-                    <img src="./img/LOGO/dji-logo_brandlogos.png" alt="DJI" />
-                    <img src="./img/LOGO/camel_logo.png" alt="Camel" />
-                </div>
-            </section>
-
-            <!-- ========== VOUCHER ========== -->
-            <section class="voucher">
-                <h2>Ưu đãi du lịch hấp dẫn</h2>
-                <p>Đăng ký ngay để nhận mã giảm giá lên đến 50% cho chuyến đi tiếp theo của bạn!</p>
-                <button>Nhận ngay</button>
-            </section>
-
-            <!-- Contact Footer -->
-            <footer class="main-footer">
-                <div class="footer-left">
-                    <h4><img class="footer-logo-image" src="./img/LOGO/LOGO Minh di dau day_WHITE&YELLOW.png" /></h4>
-                    <ul class="contact-info">
-                        <li>
-                            <img class="footer-icon" src=".\img\icon\Asset 1@4x.png" alt="Email icon" />
-                            trambui.travel@arenamultimedia.com
-                        </li>
-                        <li>
-                            <img class="footer-icon" src=".\img\icon\Asset 2@4x.png" alt="Phone icon" />
-                            0906.649.352
-                        </li>
-                        <li>
-                            <img class="footer-icon" src=".\img\icon\Asset 3@4x.png" alt="Website icon" />
-                            www.trambui@travel.com
-                        </li>
-                        <li>
-                            <img class="footer-icon" src=".\img\icon\Asset 4@4x.png" alt="Location icon" />
-                            43R/12 Hồ Văn Huê, Phú Nhuận, Tp.HCM
-                        </li>
-                    </ul>
-                    <p class="footer-message">Cùng Khám Phá Việt Nam Bạn Nhé!</p>
-                </div>
-
-                <div class="footer-right">
-                    <img src="./img\00-HNH-03.jpg" alt="Bờ biển" />
-                </div>
-            </footer>
-        </main>
-
-        <!-- ========== SCRIPT (slider) ========== -->
-        <script>
-            const slidesData = [
-                { img: "./img/Section_1_Angiang.jpg", caption: "An Giang" },
-                { img: "./img/Section_1_BinhDinh.jpg", caption: "Bình Định" },
-                { img: "./img/Section_1_BuonMeThuoc.jpg", caption: "Buôn Mê Thuộc" },
-                { img: "./img/Section_1_HaGiang.jpg", caption: "Hà Giang" },
-                { img: "./img/Section_1_HaiPhong.jpg", caption: "Hải Phòng" },
-                { img: "./img/Section_1_kiengiang.jpg", caption: "Kiên Giang" },
-                { img: "./img/Section_1_PhongNha.jpg", caption: "Phong Nha" },
-            ];
-
-            const track = document.getElementById("track");
-            const captionEl = document.getElementById("caption");
-            const dotsWrap = document.getElementById("dotsWrap");
-            let slides = [],
-                index = 0,
-                slideW = 0,
-                gap = 16,
-                step = 0,
-                baseOffset = 0,
-                isDragging = false,
-                startX = 0,
-                scrollX = 0,
-                velocity = 0,
-                dots = [];
-
-            // Cuộn mượt đến phần được nhấn
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute("href"));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 70, // trừ chiều cao header nếu cần
-                            behavior: "smooth",
-                        });
-                    }
-                });
-            });
-
-            function initSlides() {
-                const clones = [slidesData.at(-2), slidesData.at(-1), ...slidesData, slidesData[0], slidesData[1]];
-                for (let s of clones) {
-                    const div = document.createElement("div");
-                    div.className = "slide";
-                    div.innerHTML = `<img src="${s.img}?auto=format&fit=crop&w=1200&q=80" alt="">`;
-                    track.appendChild(div);
-                }
-                slides = Array.from(track.children);
-            }
-            function initDots() {
-                for (let i = 0; i < slidesData.length; i++) {
-                    const dot = document.createElement("button");
-                    dot.className = "dot";
-                    dot.onclick = () => goTo(i);
-                    dotsWrap.appendChild(dot);
-                    dots.push(dot);
-                }
-            }
-            function calc() {
-                slideW = slides[0].getBoundingClientRect().width;
-                step = slideW + gap;
-                baseOffset = document.querySelector(".slider-viewport").clientWidth / 2 - slideW / 2;
-            }
-            function translate(x) {
-                track.style.transform = `translateX(${x}px)`;
-            }
-            function update() {
-                const idx = ((index % slidesData.length) + slidesData.length) % slidesData.length;
-                captionEl.style.opacity = 0;
-                setTimeout(() => {
-                    captionEl.textContent = slidesData[idx].caption;
-                    captionEl.style.opacity = 1;
-                }, 150);
-                dots.forEach((d, i) => d.classList.toggle("active", i === idx));
-                slides.forEach((s) => s.classList.remove("is-center"));
-                slides[index + 2].classList.add("is-center");
-            }
-            function smoothTo(n) {
-                track.style.transition = "transform .6s cubic-bezier(.22,.9,.35,1)";
-                scrollX = -n * step;
-                translate(scrollX + baseOffset);
-                setTimeout(() => {
-                    track.style.transition = "none";
-                    if (n < 2) {
-                        index = slidesData.length - 2 + n;
-                        scrollX = -(index + 2) * step;
-                    }
-                    if (n >= slidesData.length + 2) {
-                        index = n - (slidesData.length + 2);
-                        scrollX = -(index + 2) * step;
-                    }
-                    translate(scrollX + baseOffset);
-                    update();
-                }, 600);
-            }
-            function goTo(i) {
-                index = i;
-                smoothTo(i + 2);
-            }
-            function next() {
-                goTo(index + 1 >= slidesData.length ? 0 : index + 1);
-            }
-            function prev() {
-                goTo(index - 1 < 0 ? slidesData.length - 1 : index - 1);
-            }
-            function snap() {
-                const nearest = Math.round(-scrollX / step);
-                index = nearest - 2;
-                smoothTo(nearest);
-            }
-            const viewport = document.querySelector(".slider-viewport");
-            viewport.addEventListener("pointerdown", (e) => {
-                isDragging = true;
-                startX = e.clientX;
-                velocity = 0;
-                track.style.transition = "none";
-            });
-            viewport.addEventListener("pointermove", (e) => {
-                if (!isDragging) return;
-                const dx = e.clientX - startX;
-                scrollX += dx;
-                translate(scrollX + baseOffset);
-                velocity = dx;
-                startX = e.clientX;
-            });
-            window.addEventListener("pointerup", () => {
-                if (!isDragging) return;
-                isDragging = false;
-                const momentum = Math.sign(velocity) * Math.min(Math.abs(velocity), 30);
-                scrollX += momentum * 10;
-                snap();
-            });
-            document.querySelector(".btn-next").onclick = next;
-            document.querySelector(".btn-prev").onclick = prev;
-
-            initSlides();
-            initDots();
-            calc();
-            scrollX = -(index + 2) * step;
-            translate(scrollX + baseOffset);
-            update();
-            window.addEventListener("resize", () => {
-                calc();
-                translate(scrollX + baseOffset);
-            });
-
-            const toggleButton = document.getElementById("menu-toggle");
-            const sidebar = document.getElementById("sidebar");
-
-            toggleButton.addEventListener("click", () => {
-                sidebar.classList.toggle("active");
-            });
-
-            // Sự kiện nhấn ra ngoài để đóng menu
-            document.addEventListener("click", (event) => {
-                // Kiểm tra nếu click KHÔNG nằm trong sidebar và KHÔNG nằm trên nút toggle
-                if (sidebar.classList.contains("active") && !sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
-                    sidebar.classList.remove("active");
-                }
-            });
-        </script>
-    </body>
+  <div class="floating-contact" aria-label="Liên hệ nhanh">
+    <a class="float-zalo" href="https://zalo.me/0976757226" target="_blank" rel="noopener noreferrer" aria-label="Chat qua Zalo"><span>Zalo</span></a>
+    <a class="float-phone" href="tel:+84976757226" aria-label="Gọi SH Express"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2Z"/></svg></a>
+    <a class="float-messenger" href="https://m.me/" target="_blank" rel="noopener noreferrer" aria-label="Chat qua Messenger"><svg viewBox="0 0 24 24"><path d="M12 2C6.2 2 2 6.3 2 11.6c0 2.9 1.3 5.4 3.5 7.2V22l3.2-1.8c1 .3 2.1.4 3.3.4 5.8 0 10-4.3 10-9.6S17.8 2 12 2Zm1 12.3-2.6-2.7-4.9 2.7 5.4-5.7 2.6 2.7 4.8-2.7-5.3 5.7Z"/></svg></a>
+  </div>
+  <script src="script.js"></script>
+  <script src="language.js"></script>
+</body>
 </html>
