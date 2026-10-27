@@ -82,7 +82,7 @@
   const nav = `
     <div class="announcement">Đặt giao hàng ngay bây giờ <span>·</span> trước 17:00 mỗi ngày <span>++</span></div>
     <header class="site-header"><div class="header-inner">
-      <a class="brand" href="index.html#home" aria-label="SH Express - Trang chủ"><img src="../web/assets/logo.png" alt="SH Express" /></a>
+      <a class="brand" href="index.html#home" aria-label="SH Express - Trang chủ"><img src="assets/logo.png" alt="SH Express" /></a>
       <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="Điều hướng chính">
         <a href="index.html#home">TRANG CHỦ</a><a href="index.html#about">GIỚI THIỆU</a>
@@ -97,7 +97,7 @@
   const footer = `
     <section class="detail-cta"><h2>LIÊN HỆ ĐỂ NHẬN TƯ VẤN &amp; BÁO GIÁ CHI TIẾT</h2><a class="button button-gold" href="index.html#contact">LIÊN HỆ NGAY <span>→</span></a></section>
     <footer class="site-footer"><div class="footer-main">
-      <div class="footer-brand"><a href="index.html#home"><img src="../web/assets/logo.png" alt="SH Express" /></a><p>Chuyển phát nhanh quốc tế<br />An toàn · Minh bạch · Tận tâm</p><div class="social-links"><a href="index.html#contact" aria-label="Facebook">f</a><a href="index.html#contact" aria-label="TikTok">♪</a><a href="https://zalo.me/0976757226" aria-label="Zalo">Z</a></div></div>
+      <div class="footer-brand"><a href="index.html#home"><img src="assets/logo.png" alt="SH Express" /></a><p>Chuyển phát nhanh quốc tế<br />An toàn · Minh bạch · Tận tâm</p><div class="social-links"><a href="index.html#contact" aria-label="Facebook">f</a><a href="index.html#contact" aria-label="TikTok">♪</a><a href="https://zalo.me/0976757226" aria-label="Zalo">Z</a></div></div>
       <div><h3>KHÁM PHÁ</h3><a href="index.html#about">Về chúng tôi</a><a href="index.html#services">Dịch vụ vận chuyển</a><a href="bang-gia.html">Bảng giá</a><a href="index.html#news">Tin tức &amp; sự kiện</a></div>
       <div><h3>DỊCH VỤ</h3><a href="goi-van-chuyen-hang-khong.html">Vận chuyển hàng không</a><a href="goi-van-chuyen-duong-thuy.html">Vận chuyển đường biển</a><a href="goi-van-chuyen-duong-bo.html">Vận chuyển đường bộ</a><a href="goi-van-chuyen-hoa-toc.html">Hỏa tốc / tiết kiệm</a></div>
       <div><h3>LIÊN HỆ</h3><a href="tel:+84976757226">0976 757 226</a><a href="mailto:info@sohaexpress.vn">info@sohaexpress.vn</a><p>Hỗ trợ tư vấn từ Thứ 2 đến Thứ 7</p></div>
@@ -115,8 +115,8 @@
 
   const aside = `
     <aside class="detail-aside"><div class="detail-experience"><div class="detail-experience-badge"><strong>15</strong><span>NĂM<br />Đội ngũ &amp; kinh nghiệm</span></div></div><h2>▸ &nbsp; TIN TỨC MỚI NHẤT</h2>
-      <a class="aside-news-card" href="index.html#news"><img src="../web/assets/news-1.png" alt="Tin tức vận chuyển" /><div><h3>CHÍNH SÁCH NHẬP HÀNG QUỐC TẾ</h3><p>Cập nhật thông tin và lưu ý trước khi gửi hàng.</p></div></a>
-      <a class="aside-news-card" href="index.html#news"><img src="../web/assets/news-2.png" alt="Kinh nghiệm gửi hàng" /><div><h3>KINH NGHIỆM ĐÓNG GÓI HÀNG HÓA</h3><p>Chuẩn bị kiện hàng cẩn thận cho hành trình xa.</p></div></a>
+      <a class="aside-news-card" href="index.html#news"><img src="assets/news-1.png" alt="Tin tức vận chuyển" /><div><h3>CHÍNH SÁCH NHẬP HÀNG QUỐC TẾ</h3><p>Cập nhật thông tin và lưu ý trước khi gửi hàng.</p></div></a>
+      <a class="aside-news-card" href="index.html#news"><img src="assets/news-2.png" alt="Kinh nghiệm gửi hàng" /><div><h3>KINH NGHIỆM ĐÓNG GÓI HÀNG HÓA</h3><p>Chuẩn bị kiện hàng cẩn thận cho hành trình xa.</p></div></a>
     </aside>`;
 
   const renderPricing = () => priceGroups.map((group) => `
@@ -128,7 +128,7 @@
   const data = page || { category: "DỊCH VỤ / BẢNG GIÁ", title: "BẢNG GIÁ DỊCH VỤ VẬN CHUYỂN QUỐC TẾ", image: "about-warehouse.png" };
   const body = isPricing
     ? `<div class="detail-breadcrumb"><a href="index.html">TRANG CHỦ</a> / BẢNG GIÁ</div><h1>${data.title}</h1><p class="pricing-intro">Lựa chọn tuyến vận chuyển phù hợp. Thời gian và cước phí thực tế có thể thay đổi theo loại hàng, trọng lượng, kích thước và địa điểm giao nhận. Liên hệ SH Express để được xác nhận báo giá.</p><div class="detail-price-section">${renderPricing()}</div>`
-    : `<div class="detail-breadcrumb"><a href="index.html">${data.category.split(" / ")[0]}</a> / ${data.category.split(" / ").slice(1).join(" / ")}</div><h1>${data.title}</h1><img class="detail-photo" src="../web/assets/${data.image}" alt="${data.title}" loading="lazy" />${data.sections.map(sectionMarkup).join("")}<p class="detail-note">Lưu ý: Danh mục hàng nhận gửi, thời gian và chi phí được xác nhận theo từng tuyến và quy định tại thời điểm gửi. Vui lòng liên hệ trước khi gửi các mặt hàng đặc thù.</p>`;
+    : `<div class="detail-breadcrumb"><a href="index.html">${data.category.split(" / ")[0]}</a> / ${data.category.split(" / ").slice(1).join(" / ")}</div><h1>${data.title}</h1><img class="detail-photo" src="assets/${data.image}" alt="${data.title}" loading="lazy" />${data.sections.map(sectionMarkup).join("")}<p class="detail-note">Lưu ý: Danh mục hàng nhận gửi, thời gian và chi phí được xác nhận theo từng tuyến và quy định tại thời điểm gửi. Vui lòng liên hệ trước khi gửi các mặt hàng đặc thù.</p>`;
 
   root.innerHTML = `${nav}<main class="detail-page"><div class="detail-hero" role="img" aria-label="Mạng lưới vận chuyển quốc tế"></div><div class="detail-content${isPricing ? " pricing-layout" : ""}"><article class="detail-article">${body}</article>${isPricing ? "" : aside}</div></main>${footer}`;
   document.title = `${isPricing ? data.title : data.category.split(" / ")[1]} — SH Express`;
