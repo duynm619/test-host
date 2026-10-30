@@ -75,21 +75,102 @@
   });
 
   const serviceCarousel = document.querySelector("#service-carousel");
-  document.querySelectorAll("[data-scroll]").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (!serviceCarousel) return;
-      const direction = button.dataset.scroll === "next" ? 1 : -1;
-      serviceCarousel.scrollBy({ left: direction * serviceCarousel.clientWidth * 0.72, behavior: "smooth" });
+  const enableDragScroll = (track) => {
+    track.addEventListener("dragstart", (event) => event.preventDefault());
+
+    let dragStartX = 0;
+    let dragStartScrollLeft = 0;
+    let lastPointerX = 0;
+    let lastPointerTime = 0;
+    let velocity = 0;
+    let dragging = false;
+    let hasDragged = false;
+    let suppressNextClick = false;
+    let momentumFrame = 0;
+
+    track.addEventListener("click", (event) => {
+      if (!suppressNextClick) return;
+      event.preventDefault();
+      event.stopPropagation();
+      suppressNextClick = false;
+    }, true);
+
+    track.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "touch" || event.button !== 0) return;
+      cancelAnimationFrame(momentumFrame);
+      track.classList.remove("is-inertial");
+      dragStartX = event.clientX;
+      dragStartScrollLeft = track.scrollLeft;
+      lastPointerX = event.clientX;
+      lastPointerTime = event.timeStamp;
+      velocity = 0;
+      dragging = true;
+      hasDragged = false;
+      track.classList.add("is-dragging");
+      track.setPointerCapture(event.pointerId);
     });
-  });
+
+    track.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      const deltaX = event.clientX - dragStartX;
+      if (Math.abs(deltaX) > 5) hasDragged = true;
+      const elapsed = event.timeStamp - lastPointerTime;
+      if (elapsed > 0) {
+        velocity = -(event.clientX - lastPointerX) / elapsed;
+      }
+      lastPointerX = event.clientX;
+      lastPointerTime = event.timeStamp;
+      track.scrollLeft = dragStartScrollLeft - deltaX;
+    });
+
+    const stopDragging = (withMomentum) => {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove("is-dragging");
+      suppressNextClick = hasDragged;
+      if (suppressNextClick) {
+        window.setTimeout(() => {
+          suppressNextClick = false;
+        }, 0);
+      }
+      if (!withMomentum || Math.abs(velocity) < 0.02) return;
+
+      track.classList.add("is-inertial");
+      let previousTime = 0;
+      const decelerate = (time) => {
+        const elapsed = previousTime ? Math.min(time - previousTime, 32) : 16;
+        previousTime = time;
+        track.scrollLeft += velocity * elapsed;
+        velocity *= Math.exp(-elapsed / 280);
+
+        const atEdge = track.scrollLeft <= 0
+          || track.scrollLeft >= track.scrollWidth - track.clientWidth;
+        if (Math.abs(velocity) < 0.02 || atEdge) {
+          track.classList.remove("is-inertial");
+          momentumFrame = 0;
+          return;
+        }
+        momentumFrame = requestAnimationFrame(decelerate);
+      };
+      momentumFrame = requestAnimationFrame(decelerate);
+    };
+
+    track.addEventListener("pointerup", () => stopDragging(true));
+    track.addEventListener("pointercancel", () => stopDragging(false));
+    track.addEventListener("lostpointercapture", () => stopDragging(false));
+  };
+
+  serviceCarousel && enableDragScroll(serviceCarousel);
 
   const testimonialTrack = document.querySelector("#testimonial-track");
+  testimonialTrack && enableDragScroll(testimonialTrack);
+
   document.querySelectorAll("[data-testimonial]").forEach((button) => {
     button.addEventListener("click", () => {
       if (!testimonialTrack) return;
       const direction = button.dataset.testimonial === "next" ? 1 : -1;
       const card = testimonialTrack.querySelector(".testimonial-card");
-      testimonialTrack.scrollBy({ left: direction * ((card?.getBoundingClientRect().width || 280) + 15), behavior: "auto" });
+      testimonialTrack.scrollBy({ left: direction * ((card?.getBoundingClientRect().width || 280) + 15), behavior: "smooth" });
     });
   });
 })();

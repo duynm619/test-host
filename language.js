@@ -448,7 +448,7 @@
     if (document.body.dataset.page && pageTitles[document.body.dataset.page]) {
       document.title = pageTitles[document.body.dataset.page][language === "en" ? 1 : 0];
     } else {
-      document.title = language === "en" ? "SH Express — Fast, Transparent International Shipping" : "SH Express — Vận chuyển quốc tế nhanh chóng, minh bạch";
+      document.title = language === "en" ? "SOHA Express — International Express Delivery Company" : "SOHA Express — Công ty chuyển phát nhanh quốc tế";
     }
     document.querySelectorAll("meta[name='description']").forEach((meta) => {
       if (!meta.dataset.originalContent) meta.dataset.originalContent = meta.content;
