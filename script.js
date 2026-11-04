@@ -65,8 +65,8 @@
     const name = String(formData.get("name") || "").trim();
 
     contactFeedback.textContent = document.documentElement.lang === "en"
-      ? `Thank you, ${name}. Your request has been recorded in this demo. Call 0976 757 226 for immediate assistance.`
-      : `Cảm ơn ${name}. Yêu cầu đã được ghi nhận trong bản demo; vui lòng gọi 0976 757 226 để được hỗ trợ ngay.`;
+      ? `Thank you, ${name}. Your request has been recorded in this demo. Call 0988 485 972 for immediate assistance.`
+      : `Cảm ơn ${name}. Yêu cầu đã được ghi nhận trong bản demo; vui lòng gọi 0988 485 972 để được hỗ trợ ngay.`;
     contactForm.reset();
   });
 
