@@ -19,7 +19,7 @@
         { title: "2. Tốc độ và chi phí linh hoạt", subtitle: "Tư vấn phương án vận chuyển phù hợp", bullets: ["Lựa chọn dịch vụ nhanh hoặc tiết kiệm theo nhu cầu.", "Báo giá và các điều kiện vận chuyển được trao đổi trước khi gửi.", "Hỗ trợ tư vấn cách tính trọng lượng và đóng gói hàng hóa."] },
         { title: "3. Các mặt hàng thường gửi", bullets: ["Quần áo, giày dép, quà tặng và hàng thủ công.", "Thực phẩm khô, mỹ phẩm và hàng tiêu dùng theo quy định nhập khẩu.", "Hồ sơ, chứng từ, hàng mẫu và một số mặt hàng kinh doanh."] },
         { title: "4. Theo dõi đơn hàng minh bạch", text: "Sau khi tiếp nhận đơn hàng, khách hàng được cung cấp mã vận đơn để theo dõi các cập nhật trong suốt hành trình. Liên hệ với đội ngũ tư vấn để xác nhận danh mục hàng hóa được nhận gửi và yêu cầu chứng từ theo từng tuyến." }
-      ], image: "SOURCE/IMAGE/VẬN CHUYỂN HÀNG HÓA.png"
+      ], image: "SOURCE/IMAGE/VẬN CHUYỂN HÀNG HÓA.webp"
     },
     air: {
       category: "GÓI VẬN CHUYỂN / GÓI CƯỚC ĐƯỜNG HÀNG KHÔNG",
@@ -41,7 +41,7 @@
         { title: "Các loại hàng hóa nhận vận chuyển", chips: ["Hàng tiêu dùng", "Thực phẩm khô", "Mỹ phẩm", "Quần áo, giày dép", "Đồ gia dụng", "Thiết bị điện tử", "Máy móc", "Nội thất", "Hàng thương mại", "Container FCL", "Hàng ghép LCL"] },
         { title: "Quy trình vận chuyển tại SH Express", bullets: ["Tiếp nhận yêu cầu, loại hàng và địa điểm giao nhận.", "Tư vấn tuyến vận chuyển và cung cấp báo giá.", "Nhận hàng tại kho hoặc theo phương án thống nhất.", "Kiểm tra, đóng gói và hướng dẫn thủ tục cần thiết.", "Vận chuyển, cập nhật trạng thái và giao hàng."] },
         { title: "Cam kết dịch vụ", bullets: ["Tư vấn miễn phí phương án vận chuyển.", "Thông tin chi phí và các điều kiện được trao đổi rõ ràng.", "Hỗ trợ khách hàng xuyên suốt quá trình gửi hàng."] }
-      ], image: "SOURCE/IMAGE/Hỗ trợ gom hàng từ nhiều nguồn.png"
+      ], image: "SOURCE/IMAGE/Hỗ trợ gom hàng từ nhiều nguồn.webp"
     },
     road: {
       category: "GÓI VẬN CHUYỂN / GÓI CƯỚC ĐƯỜNG BỘ",
@@ -51,7 +51,7 @@
         { title: "Ưu điểm của vận chuyển đường bộ", bullets: ["Linh hoạt về điểm nhận và giao hàng.", "Phù hợp với kiện hàng cần kết nối nhiều chặng.", "Có thể phối hợp với phương thức hàng không hoặc đường biển theo nhu cầu."] },
         { title: "Quy trình giao nhận", bullets: ["Tiếp nhận thông tin hàng hóa và địa chỉ giao nhận.", "Tư vấn tuyến, thời gian dự kiến và chi phí.", "Sắp xếp phương án lấy hàng, đóng gói và bàn giao.", "Cập nhật tình trạng lô hàng trong quá trình vận chuyển."] },
         { title: "Liên hệ để được tư vấn", text: "Lộ trình và khả năng nhận hàng được xác nhận theo từng khu vực, loại hàng và thời điểm gửi. Hãy liên hệ SH Express để được tư vấn giải pháp phù hợp." }
-      ], image: "SOURCE/IMAGE/VẬN CHUYỂN HÀNG HÓA.png"
+      ], image: "SOURCE/IMAGE/VẬN CHUYỂN HÀNG HÓA.webp"
     },
     express: {
       category: "GÓI VẬN CHUYỂN / GÓI CƯỚC HỎA TỐC / TIẾT KIỆM",
@@ -100,7 +100,7 @@
       <div><h3>VỀ CHÚNG TÔI</h3><a href="index.html#about">Giới thiệu</a><a href="index.html#services">Dịch vụ</a><a href="index.html#pricing">Bảng giá cước vận chuyển</a><a href="index.html#news">Tin tức &amp; Sự kiện</a><a href="index.html#contact">Tuyển dụng</a><a href="index.html#contact">Liên hệ</a></div>
       <div><h3>LIÊN HỆ</h3><p>VP chính HCM: 276/169 Thống Nhất, phường An Hội Đông, HCM</p><p>Hotline: 0988 485 972 - 0979 277 902</p><p>Email: cs.sohaexpress@gmail.com</p></div>
     </div><div class="footer-bottom"></div></footer>
-    <div class="floating-contact" aria-label="Liên hệ nhanh"><a class="float-phone" href="tel:+84988485972" aria-label="Gọi SH Express"><img src="SOURCE/ICON/hotline.png" alt="" /></a><a class="float-zalo" href="https://zalo.me/0979277902" target="_blank" rel="noopener noreferrer" aria-label="Chat qua Zalo"><img src="SOURCE/ICON/zalo.png" alt="" /></a><a class="float-messenger" href="https://m.me/" target="_blank" rel="noopener noreferrer" aria-label="Chat qua Messenger"><img src="SOURCE/ICON/mess.png" alt="" /></a></div>`;
+    <div class="floating-contact" aria-label="Liên hệ nhanh"><a class="float-phone" href="tel:+84988485972" aria-label="Gọi SH Express"><img src="SOURCE/ICON/hotline.png" alt="" /></a><a class="float-zalo" href="https://zalo.me/0979277902" target="_blank" rel="noopener noreferrer" aria-label="Chat qua Zalo"><img src="SOURCE/ICON/zalo.png" alt="" /></a><a class="float-messenger" href="https://m.me/chuyenphatnhanhSHExpress" target="_blank" rel="noopener noreferrer" aria-label="Chat qua Messenger"><img src="SOURCE/ICON/mess.png" alt="" /></a></div>`;
 
   const sectionMarkup = (section) => `
     <section class="detail-section">
@@ -113,8 +113,8 @@
 
   const aside = `
     <aside class="detail-aside"><div class="detail-experience"><div class="detail-experience-badge"><strong>5 NĂM</strong><span>Đội ngũ &amp; kinh nghiệm</span></div></div><h2>▸ &nbsp; TIN TỨC MỚI NHẤT</h2>
-      <a class="aside-news-card" href="index.html#news"><img src="SOURCE/IMAGE/KHAI BÁO HẢI QUAN.png" alt="Tin tức vận chuyển" /><div><h3>CHÍNH SÁCH NHẬP HÀNG QUỐC TẾ</h3><p>Cập nhật thông tin và lưu ý trước khi gửi hàng.</p></div></a>
-      <a class="aside-news-card" href="index.html#news"><img src="SOURCE/IMAGE/ĐÓNG GÓI & BẢO QUẢN.png" alt="Kinh nghiệm gửi hàng" /><div><h3>KINH NGHIỆM ĐÓNG GÓI HÀNG HÓA</h3><p>Chuẩn bị kiện hàng cẩn thận cho hành trình xa.</p></div></a>
+      <a class="aside-news-card" href="index.html#news"><img src="SOURCE/IMAGE/KHAI BÁO HẢI QUAN.webp" alt="Tin tức vận chuyển" /><div><h3>CHÍNH SÁCH NHẬP HÀNG QUỐC TẾ</h3><p>Cập nhật thông tin và lưu ý trước khi gửi hàng.</p></div></a>
+      <a class="aside-news-card" href="index.html#news"><img src="SOURCE/IMAGE/ĐÓNG GÓI & BẢO QUẢN.webp" alt="Kinh nghiệm gửi hàng" /><div><h3>KINH NGHIỆM ĐÓNG GÓI HÀNG HÓA</h3><p>Chuẩn bị kiện hàng cẩn thận cho hành trình xa.</p></div></a>
     </aside>`;
 
   const renderPricing = () => `

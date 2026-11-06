@@ -53,7 +53,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .language-switch > span { width: 1px; height: 15px; background: #c9c5bf; }
 .menu-toggle { display: none; }
 
-.hero { position: relative; min-height: min(650px, 68vw); min-height: clamp(440px, 49vw, 650px); overflow: hidden; background: #332b20 url("SOURCE/IMAGE/M%E1%BB%9E%20R%E1%BB%98NG/Hero%20banner_C%E1%BA%A3ng%20logistics_M%E1%BB%9E%20R%E1%BB%98NG.png") center 48% / cover no-repeat; color: #fff; }
+.hero { position: relative; min-height: min(650px, 68vw); min-height: clamp(440px, 49vw, 650px); overflow: hidden; background: #332b20 url("SOURCE/IMAGE/M%E1%BB%9E%20R%E1%BB%98NG/Hero%20banner_C%E1%BA%A3ng%20logistics_M%E1%BB%9E%20R%E1%BB%98NG.webp") center 48% / cover no-repeat; color: #fff; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,13,10,.74) 0%, rgba(23,19,14,.4) 48%, rgba(25,20,14,.08) 100%), linear-gradient(0deg, rgba(20,17,12,.45), transparent 48%); }
 .hero-inner { position: relative; display: flex; align-items: center; width: min(100% - 64px, var(--max-width)); min-height: inherit; margin: auto; }
 .tracking-card { width: min(520px, 52%); padding: 34px 34px 28px; border: 1px solid rgba(255,255,255,.45); border-radius: 4px; background: rgba(255,255,255,.96); color: var(--ink); box-shadow: var(--shadow); }
@@ -294,7 +294,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-dropdown a:hover { background: #f8f6f0; color: #9a7b26; }
 
 .detail-page { min-height: 70vh; background: #fff; }
-.detail-hero { height: clamp(150px, 18vw, 230px); background: #514330 url("SOURCE/IMAGE/M%E1%BB%9E%20R%E1%BB%98NG/Hero%20banner_C%E1%BA%A3ng%20logistics_M%E1%BB%9E%20R%E1%BB%98NG.png") center 54% / cover no-repeat; }
+.detail-hero { height: clamp(150px, 18vw, 230px); background: #514330 url("SOURCE/IMAGE/M%E1%BB%9E%20R%E1%BB%98NG/Hero%20banner_C%E1%BA%A3ng%20logistics_M%E1%BB%9E%20R%E1%BB%98NG.webp") center 54% / cover no-repeat; }
 .detail-content { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, .8fr); gap: clamp(32px, 6vw, 78px); width: min(100% - 64px, 1240px); margin: auto; padding: 48px 0 86px; }
 .detail-content.pricing-layout { grid-template-columns: 1fr; }
 .detail-article { min-width: 0; }
@@ -398,7 +398,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .partner-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 38px; }
 .partner-logos img { width: auto; max-width: 105px; height: 28px; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .2s, opacity .2s; }
 .partner-logos img:hover { filter: none; opacity: 1; }
-.trust-band { position: relative; min-height: 275px; display: flex; align-items: center; overflow: hidden; background: #34401e url("SOURCE/IMAGE/%C4%90o%C3%A0n%20t%C3%A0u.png") center 55% / cover no-repeat; }
+.trust-band { position: relative; min-height: 275px; display: flex; align-items: center; overflow: hidden; background: #34401e url("SOURCE/IMAGE/%C4%90o%C3%A0n%20t%C3%A0u.webp") center 55% / cover no-repeat; }
 .trust-shade { position: absolute; inset: 0; background: rgba(22,34,18,.32); }
 .trust-wrap { position: relative; padding-top: 34px; padding-bottom: 34px; }
 .trust-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 28px; background: rgba(255,255,255,.96); box-shadow: 0 18px 45px rgba(0,0,0,.16); }
@@ -989,4 +989,25 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .home-page .about-copy > p:not(.eyebrow) { font-size: clamp(17px, 1.05vw, 19px); }
   .home-page .stats-row strong { font-size: clamp(38px, 3.8vw, 50px); }
   .home-page .stats-row span { font-size: clamp(15px, .95vw, 17px); }
+}
+
+/* Testimonial cards — feedback layout (role / name / quote) */
+.testimonial-role { display: block; color: #111; font-size: 12px; font-style: italic; letter-spacing: .02em; }
+.home-page .testimonial-card { flex: 0 0 calc((100% - 45px) / 4); min-width: 280px; padding: 10px 14px; }
+.home-page .testimonial-card img { width: clamp(150px, 11vw, 210px); height: clamp(150px, 11vw, 210px); margin: 0 auto 30px; }
+.home-page .testimonial-card .testimonial-role { margin-bottom: 2px; color: #111; font-size: 13px; }
+.home-page .testimonial-card strong { color: #111; font-size: clamp(17px, 1.15vw, 20px); font-weight: 800; letter-spacing: .01em; line-height: 1.25; }
+.home-page .testimonial-card p { margin: 16px auto 0; max-width: 420px; color: #111; font-size: clamp(15px, 1.05vw, 18px); font-style: italic; line-height: 1.4; }
+@media (max-width: 780px) {
+  .home-page .testimonial-card { flex-basis: min(80vw, 320px); min-width: 0; }
+  .home-page .testimonial-card img { width: 150px; height: 150px; margin-bottom: 20px; }
+}
+
+/* Carousel arrows: prevent the brown ::selection highlight when clicked repeatedly */
+.carousel-arrow { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+.carousel-arrow::selection { background: transparent; }
+
+/* "Hỗ trợ gom hàng" row: keep original image, centre the copy vertically against it (desktop only) */
+@media (min-width: 781px) {
+  .home-page .value-row-reverse .value-copy { justify-content: center; padding-top: 0; padding-bottom: 0; }
 }
