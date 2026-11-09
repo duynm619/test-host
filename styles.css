@@ -1011,3 +1011,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (min-width: 781px) {
   .home-page .value-row-reverse .value-copy { justify-content: center; padding-top: 0; padding-bottom: 0; }
 }
+
+/* Service cards: text +2px */
+.home-page .why-card h3 { max-width: 260px; font-size: 17px; }
+@media (max-width: 780px) { .home-page .why-card h3 { font-size: 16px; } }
+
+/* Footer: balanced columns, contact lines don't break mid-line */
+@media (min-width: 1201px) {
+  .home-page .footer-main,
+  .shared-home-footer .footer-main { grid-template-columns: minmax(0, 460px) max-content max-content; justify-content: space-between; gap: 56px; width: min(calc(100% - 120px), 1240px); }
+}
+@media (min-width: 781px) and (max-width: 1200px) {
+  .home-page .footer-main,
+  .shared-home-footer .footer-main { grid-template-columns: max-content max-content; justify-content: space-between; gap: 32px 56px; width: calc(100% - 80px); }
+  .home-page .footer-brand,
+  .shared-home-footer .footer-brand { grid-column: 1 / -1; max-width: 640px; }
+}
+@media (min-width: 781px) {
+  .home-page .footer-main > div:not(.footer-brand) p,
+  .home-page .footer-main > div:not(.footer-brand) a,
+  .shared-home-footer .footer-main > div:not(.footer-brand) p,
+  .shared-home-footer .footer-main > div:not(.footer-brand) a { white-space: nowrap; }
+  .home-page .footer-brand h3,
+  .shared-home-footer .footer-brand h3 { white-space: nowrap; }
+}
