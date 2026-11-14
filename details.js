@@ -12,10 +12,10 @@
       ], image: "SOURCE/IMAGE/SOHA pic 0.jpg"
     },
     usa: {
-      category: "DỊCH VỤ / DỊCH VỤ ĐẾN MĨ",
-      title: "DỊCH VỤ VẬN CHUYỂN ĐẾN MĨ TRONG 5 NGÀY",
+      category: "DỊCH VỤ / DỊCH VỤ ĐẾN MỸ",
+      title: "DỊCH VỤ VẬN CHUYỂN ĐẾN MỸ TRONG 5 NGÀY",
       sections: [
-        { title: "1. Gửi hàng đi Mĩ cùng SH Express", text: "SH Express hỗ trợ vận chuyển quốc tế đến các tiểu bang trên khắp nước Mĩ. Đội ngũ tư vấn sẽ giúp bạn lựa chọn phương án phù hợp với đặc tính hàng hóa, thời gian và ngân sách." },
+        { title: "1. Gửi hàng đi Mỹ cùng SH Express", text: "SH Express hỗ trợ vận chuyển quốc tế đến các tiểu bang trên khắp nước Mỹ. Đội ngũ tư vấn sẽ giúp bạn lựa chọn phương án phù hợp với đặc tính hàng hóa, thời gian và ngân sách." },
         { title: "2. Tốc độ và chi phí linh hoạt", subtitle: "Tư vấn phương án vận chuyển phù hợp", bullets: ["Lựa chọn dịch vụ nhanh hoặc tiết kiệm theo nhu cầu.", "Báo giá và các điều kiện vận chuyển được trao đổi trước khi gửi.", "Hỗ trợ tư vấn cách tính trọng lượng và đóng gói hàng hóa."] },
         { title: "3. Các mặt hàng thường gửi", bullets: ["Quần áo, giày dép, quà tặng và hàng thủ công.", "Thực phẩm khô, mỹ phẩm và hàng tiêu dùng theo quy định nhập khẩu.", "Hồ sơ, chứng từ, hàng mẫu và một số mặt hàng kinh doanh."] },
         { title: "4. Theo dõi đơn hàng minh bạch", text: "Sau khi tiếp nhận đơn hàng, khách hàng được cung cấp mã vận đơn để theo dõi các cập nhật trong suốt hành trình. Liên hệ với đội ngũ tư vấn để xác nhận danh mục hàng hóa được nhận gửi và yêu cầu chứng từ theo từng tuyến." }
@@ -67,7 +67,7 @@
 
   const priceRoutes = [
     { country: "Úc", flag: "SOURCE/Flag/Australia.png", days: "4-7", price: "150,000", href: "bang-gia.html" },
-    { country: "Mĩ", flag: "SOURCE/Flag/flag_america.jpg", days: "3-12", price: "250,000", href: "dich-vu-my.html" },
+    { country: "Mỹ", flag: "SOURCE/Flag/flag_america.jpg", days: "3-12", price: "250,000", href: "dich-vu-my.html" },
     { country: "Canada", flag: "SOURCE/Flag/Canada.jpg", days: "7-12", price: "280,000", href: "bang-gia.html" },
     { country: "Châu Âu", flag: "SOURCE/Flag/Flag_of_Europe.svg.webp", days: "7-15", price: "240,000", href: "bang-gia.html" },
     { country: "Hàn Quốc", flag: "SOURCE/Flag/South Korea flag.jpg", days: "2-4", price: "100,000", href: "bang-gia.html" },
@@ -86,7 +86,7 @@
       <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="main-nav" aria-label="Điều hướng chính">
         <a href="index.html#home">TRANG CHỦ</a><a href="index.html#about">GIỚI THIỆU</a>
-        <div class="nav-group"><a href="dich-vu-nhat.html">DỊCH VỤ</a><div class="nav-dropdown"><a href="dich-vu-nhat.html">Vận chuyển đến Nhật Bản</a><a href="dich-vu-my.html">Vận chuyển đến Mĩ</a><a href="bang-gia.html">Tuyến vận chuyển quốc tế</a></div></div>
+        <div class="nav-group"><a href="dich-vu-nhat.html">DỊCH VỤ</a><div class="nav-dropdown"><a href="dich-vu-nhat.html">Vận chuyển đến Nhật Bản</a><a href="dich-vu-my.html">Vận chuyển đến Mỹ</a><a href="bang-gia.html">Tuyến vận chuyển quốc tế</a></div></div>
         <a href="bang-gia.html">BẢNG GIÁ</a><a href="index.html#news">TIN TỨC &amp; SỰ KIỆN</a><a href="index.html#contact">LIÊN HỆ</a>
         <a class="profile-link" href="index.html#contact" aria-label="Tài khoản"><svg viewBox="0 0 24 24"><path d="M12 12a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Zm0 2c-4 0-7.2 2-7.2 4.5V21h14.4v-2.5c0-2.5-3.2-4.5-7.2-4.5Z"/></svg></a>
         <div class="language-switch" aria-label="Ngôn ngữ"><button class="selected" type="button">VN</button><span></span><button type="button">EN</button></div>
